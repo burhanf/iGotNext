@@ -12,6 +12,8 @@
 		5E76355D274ACBCB00CC7435 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76355C274ACBCB00CC7435 /* Game.swift */; };
 		5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E76355F274ACBFB00CC7435 /* MapKit.framework */; };
 		5E763562274ACC0200CC7435 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E763561274ACC0200CC7435 /* CoreLocation.framework */; };
+		5E763565274ACC8400CC7435 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763564274ACC8400CC7435 /* Login.swift */; };
+		5E763567274ACCA000CC7435 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763566274ACCA000CC7435 /* Signup.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
 		A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */; };
 		A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E9274AC94D0041FD1C /* ContentView.swift */; };
@@ -78,6 +80,8 @@
 		5E76355C274ACBCB00CC7435 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5E76355F274ACBFB00CC7435 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		5E763561274ACC0200CC7435 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		5E763564274ACC8400CC7435 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		5E763566274ACCA000CC7435 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B950E5274AC94D0041FD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5E763563274ACC7500CC7435 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5B950E9274AC94D0041FD1C /* ContentView.swift */,
+				5E763564274ACC8400CC7435 /* Login.swift */,
+				5E763566274ACCA000CC7435 /* Signup.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A5B950D9274AC94D0041FD1C = {
 			isa = PBXGroup;
 			children = (
@@ -163,10 +177,10 @@
 		A5B950E4274AC94D0041FD1C /* iGotNext */ = {
 			isa = PBXGroup;
 			children = (
+				5E763563274ACC7500CC7435 /* Views */,
 				5E763557274ACB6E00CC7435 /* Models */,
 				A5B950E5274AC94D0041FD1C /* AppDelegate.swift */,
 				A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */,
-				A5B950E9274AC94D0041FD1C /* ContentView.swift */,
 				A5B950EB274AC94E0041FD1C /* Assets.xcassets */,
 				A5B950F0274AC94E0041FD1C /* LaunchScreen.storyboard */,
 				A5B950F3274AC94E0041FD1C /* Info.plist */,
@@ -347,10 +361,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E763565274ACC8400CC7435 /* Login.swift in Sources */,
 				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
 				5E76355D274ACBCB00CC7435 /* Game.swift in Sources */,
 				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
 				5E76355B274ACBB800CC7435 /* Location.swift in Sources */,
+				5E763567274ACCA000CC7435 /* Signup.swift in Sources */,
 				A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */,
 				5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */,
 			);
