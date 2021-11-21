@@ -15,6 +15,10 @@
 		5E763565274ACC8400CC7435 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763564274ACC8400CC7435 /* Login.swift */; };
 		5E763567274ACCA000CC7435 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763566274ACCA000CC7435 /* Signup.swift */; };
 		5E763569274ACCC900CC7435 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763568274ACCC900CC7435 /* MapView.swift */; };
+		5E76356B274ACCE900CC7435 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76356A274ACCE900CC7435 /* UserProfile.swift */; };
+		5E76356D274ACCFD00CC7435 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76356C274ACCFD00CC7435 /* HomePage.swift */; };
+		5E76356F274ACD1000CC7435 /* CreateGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76356E274ACD1000CC7435 /* CreateGameView.swift */; };
+		5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763570274ACD2300CC7435 /* GameInformationView.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
 		A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */; };
 		A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E9274AC94D0041FD1C /* ContentView.swift */; };
@@ -84,6 +88,10 @@
 		5E763564274ACC8400CC7435 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5E763566274ACCA000CC7435 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
 		5E763568274ACCC900CC7435 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5E76356A274ACCE900CC7435 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		5E76356C274ACCFD00CC7435 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		5E76356E274ACD1000CC7435 /* CreateGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameView.swift; sourceTree = "<group>"; };
+		5E763570274ACD2300CC7435 /* GameInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInformationView.swift; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B950E5274AC94D0041FD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +160,10 @@
 				5E763564274ACC8400CC7435 /* Login.swift */,
 				5E763566274ACCA000CC7435 /* Signup.swift */,
 				5E763568274ACCC900CC7435 /* MapView.swift */,
+				5E76356A274ACCE900CC7435 /* UserProfile.swift */,
+				5E76356C274ACCFD00CC7435 /* HomePage.swift */,
+				5E76356E274ACD1000CC7435 /* CreateGameView.swift */,
+				5E763570274ACD2300CC7435 /* GameInformationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,8 +376,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */,
+				5E76356F274ACD1000CC7435 /* CreateGameView.swift in Sources */,
 				5E763565274ACC8400CC7435 /* Login.swift in Sources */,
+				5E76356D274ACCFD00CC7435 /* HomePage.swift in Sources */,
 				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
+				5E76356B274ACCE900CC7435 /* UserProfile.swift in Sources */,
 				5E76355D274ACBCB00CC7435 /* Game.swift in Sources */,
 				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
 				5E76355B274ACBB800CC7435 /* Location.swift in Sources */,
