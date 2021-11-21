@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
+		A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */; };
+		A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E9274AC94D0041FD1C /* ContentView.swift */; };
+		A5B950EC274AC94E0041FD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B950EB274AC94E0041FD1C /* Assets.xcassets */; };
+		A5B950EF274AC94E0041FD1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B950EE274AC94E0041FD1C /* Preview Assets.xcassets */; };
+		A5B950F2274AC94E0041FD1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B950F0274AC94E0041FD1C /* LaunchScreen.storyboard */; };
+		A5B950F7274AC94E0041FD1C /* iGotNext WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A5B950F6274AC94E0041FD1C /* iGotNext WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5B950FD274AC94E0041FD1C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B950FB274AC94E0041FD1C /* Interface.storyboard */; };
+		A5B950FF274AC94F0041FD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B950FE274AC94F0041FD1C /* Assets.xcassets */; };
+		A5B95106274AC94F0041FD1C /* iGotNext WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A5B95105274AC94F0041FD1C /* iGotNext WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A5B9510B274AC94F0041FD1C /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9510A274AC94F0041FD1C /* HostingController.swift */; };
+		A5B9510D274AC94F0041FD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9510C274AC94F0041FD1C /* ContentView.swift */; };
+		A5B9510F274AC94F0041FD1C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B9510E274AC94F0041FD1C /* ExtensionDelegate.swift */; };
+		A5B95111274AC94F0041FD1C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B95110274AC94F0041FD1C /* ComplicationController.swift */; };
+		A5B95113274AC94F0041FD1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B95112274AC94F0041FD1C /* Assets.xcassets */; };
+		A5B95116274AC94F0041FD1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B95115274AC94F0041FD1C /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5B950F8274AC94E0041FD1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5B950DA274AC94D0041FD1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5B950F5274AC94E0041FD1C;
+			remoteInfo = "iGotNext WatchKit App";
+		};
+		A5B95107274AC94F0041FD1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5B950DA274AC94D0041FD1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5B95104274AC94F0041FD1C;
+			remoteInfo = "iGotNext WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5B9511D274AC94F0041FD1C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A5B95106274AC94F0041FD1C /* iGotNext WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B95121274AC94F0041FD1C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A5B950F7274AC94E0041FD1C /* iGotNext WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B950E5274AC94D0041FD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A5B950E9274AC94D0041FD1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A5B950EB274AC94E0041FD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5B950EE274AC94E0041FD1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5B950F1274AC94E0041FD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A5B950F3274AC94E0041FD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B950F6274AC94E0041FD1C /* iGotNext WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iGotNext WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B950FC274AC94E0041FD1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A5B950FE274AC94F0041FD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5B95100274AC94F0041FD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5B95105274AC94F0041FD1C /* iGotNext WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iGotNext WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5B9510A274AC94F0041FD1C /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		A5B9510C274AC94F0041FD1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A5B9510E274AC94F0041FD1C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A5B95110274AC94F0041FD1C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		A5B95112274AC94F0041FD1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5B95115274AC94F0041FD1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5B95117274AC94F0041FD1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5B950DF274AC94D0041FD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B95102274AC94F0041FD1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5B950D9274AC94D0041FD1C = {
+			isa = PBXGroup;
+			children = (
+				A5B950E4274AC94D0041FD1C /* iGotNext */,
+				A5B950FA274AC94E0041FD1C /* iGotNext WatchKit App */,
+				A5B95109274AC94F0041FD1C /* iGotNext WatchKit Extension */,
+				A5B950E3274AC94D0041FD1C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5B950E3274AC94D0041FD1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5B950E2274AC94D0041FD1C /* iGotNext.app */,
+				A5B950F6274AC94E0041FD1C /* iGotNext WatchKit App.app */,
+				A5B95105274AC94F0041FD1C /* iGotNext WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5B950E4274AC94D0041FD1C /* iGotNext */ = {
+			isa = PBXGroup;
+			children = (
+				A5B950E5274AC94D0041FD1C /* AppDelegate.swift */,
+				A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */,
+				A5B950E9274AC94D0041FD1C /* ContentView.swift */,
+				A5B950EB274AC94E0041FD1C /* Assets.xcassets */,
+				A5B950F0274AC94E0041FD1C /* LaunchScreen.storyboard */,
+				A5B950F3274AC94E0041FD1C /* Info.plist */,
+				A5B950ED274AC94E0041FD1C /* Preview Content */,
+			);
+			path = iGotNext;
+			sourceTree = "<group>";
+		};
+		A5B950ED274AC94E0041FD1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A5B950EE274AC94E0041FD1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A5B950FA274AC94E0041FD1C /* iGotNext WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				A5B950FB274AC94E0041FD1C /* Interface.storyboard */,
+				A5B950FE274AC94F0041FD1C /* Assets.xcassets */,
+				A5B95100274AC94F0041FD1C /* Info.plist */,
+			);
+			path = "iGotNext WatchKit App";
+			sourceTree = "<group>";
+		};
+		A5B95109274AC94F0041FD1C /* iGotNext WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5B9510A274AC94F0041FD1C /* HostingController.swift */,
+				A5B9510C274AC94F0041FD1C /* ContentView.swift */,
+				A5B9510E274AC94F0041FD1C /* ExtensionDelegate.swift */,
+				A5B95110274AC94F0041FD1C /* ComplicationController.swift */,
+				A5B95112274AC94F0041FD1C /* Assets.xcassets */,
+				A5B95117274AC94F0041FD1C /* Info.plist */,
+				A5B95114274AC94F0041FD1C /* Preview Content */,
+			);
+			path = "iGotNext WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A5B95114274AC94F0041FD1C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A5B95115274AC94F0041FD1C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5B950E1274AC94D0041FD1C /* iGotNext */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B95122274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext" */;
+			buildPhases = (
+				A5B950DE274AC94D0041FD1C /* Sources */,
+				A5B950DF274AC94D0041FD1C /* Frameworks */,
+				A5B950E0274AC94D0041FD1C /* Resources */,
+				A5B95121274AC94F0041FD1C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5B950F9274AC94E0041FD1C /* PBXTargetDependency */,
+			);
+			name = iGotNext;
+			productName = iGotNext;
+			productReference = A5B950E2274AC94D0041FD1C /* iGotNext.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A5B950F5274AC94E0041FD1C /* iGotNext WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B9511E274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext WatchKit App" */;
+			buildPhases = (
+				A5B950F4274AC94E0041FD1C /* Resources */,
+				A5B9511D274AC94F0041FD1C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5B95108274AC94F0041FD1C /* PBXTargetDependency */,
+			);
+			name = "iGotNext WatchKit App";
+			productName = "iGotNext WatchKit App";
+			productReference = A5B950F6274AC94E0041FD1C /* iGotNext WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A5B95104274AC94F0041FD1C /* iGotNext WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5B9511A274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext WatchKit Extension" */;
+			buildPhases = (
+				A5B95101274AC94F0041FD1C /* Sources */,
+				A5B95102274AC94F0041FD1C /* Frameworks */,
+				A5B95103274AC94F0041FD1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iGotNext WatchKit Extension";
+			productName = "iGotNext WatchKit Extension";
+			productReference = A5B95105274AC94F0041FD1C /* iGotNext WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5B950DA274AC94D0041FD1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					A5B950E1274AC94D0041FD1C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A5B950F5274AC94E0041FD1C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					A5B95104274AC94F0041FD1C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = A5B950DD274AC94D0041FD1C /* Build configuration list for PBXProject "iGotNext" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A5B950D9274AC94D0041FD1C;
+			productRefGroup = A5B950E3274AC94D0041FD1C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5B950E1274AC94D0041FD1C /* iGotNext */,
+				A5B950F5274AC94E0041FD1C /* iGotNext WatchKit App */,
+				A5B95104274AC94F0041FD1C /* iGotNext WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5B950E0274AC94D0041FD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B950F2274AC94E0041FD1C /* LaunchScreen.storyboard in Resources */,
+				A5B950EF274AC94E0041FD1C /* Preview Assets.xcassets in Resources */,
+				A5B950EC274AC94E0041FD1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B950F4274AC94E0041FD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B950FF274AC94F0041FD1C /* Assets.xcassets in Resources */,
+				A5B950FD274AC94E0041FD1C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B95103274AC94F0041FD1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B95116274AC94F0041FD1C /* Preview Assets.xcassets in Resources */,
+				A5B95113274AC94F0041FD1C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5B950DE274AC94D0041FD1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
+				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
+				A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5B95101274AC94F0041FD1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5B9510D274AC94F0041FD1C /* ContentView.swift in Sources */,
+				A5B95111274AC94F0041FD1C /* ComplicationController.swift in Sources */,
+				A5B9510B274AC94F0041FD1C /* HostingController.swift in Sources */,
+				A5B9510F274AC94F0041FD1C /* ExtensionDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5B950F9274AC94E0041FD1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5B950F5274AC94E0041FD1C /* iGotNext WatchKit App */;
+			targetProxy = A5B950F8274AC94E0041FD1C /* PBXContainerItemProxy */;
+		};
+		A5B95108274AC94F0041FD1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5B95104274AC94F0041FD1C /* iGotNext WatchKit Extension */;
+			targetProxy = A5B95107274AC94F0041FD1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A5B950F0274AC94E0041FD1C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5B950F1274AC94E0041FD1C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A5B950FB274AC94E0041FD1C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5B950FC274AC94E0041FD1C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5B95118274AC94F0041FD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A5B95119274AC94F0041FD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A5B9511B274AC94F0041FD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iGotNext WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "iGotNext WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		A5B9511C274AC94F0041FD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iGotNext WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "iGotNext WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		A5B9511F274AC94F0041FD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iGotNext_WatchKit_Extension;
+				INFOPLIST_FILE = "iGotNext WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		A5B95120274AC94F0041FD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = iGotNext_WatchKit_Extension;
+				INFOPLIST_FILE = "iGotNext WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		A5B95123274AC94F0041FD1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iGotNext/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iGotNext/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5B95124274AC94F0041FD1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"iGotNext/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iGotNext/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = prog31975.iGotNext;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5B950DD274AC94D0041FD1C /* Build configuration list for PBXProject "iGotNext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B95118274AC94F0041FD1C /* Debug */,
+				A5B95119274AC94F0041FD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B9511A274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B9511B274AC94F0041FD1C /* Debug */,
+				A5B9511C274AC94F0041FD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B9511E274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B9511F274AC94F0041FD1C /* Debug */,
+				A5B95120274AC94F0041FD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5B95122274AC94F0041FD1C /* Build configuration list for PBXNativeTarget "iGotNext" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5B95123274AC94F0041FD1C /* Debug */,
+				A5B95124274AC94F0041FD1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5B950DA274AC94D0041FD1C /* Project object */;
+}
