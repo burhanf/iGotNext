@@ -14,6 +14,7 @@
 		5E763562274ACC0200CC7435 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E763561274ACC0200CC7435 /* CoreLocation.framework */; };
 		5E763565274ACC8400CC7435 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763564274ACC8400CC7435 /* Login.swift */; };
 		5E763567274ACCA000CC7435 /* Signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763566274ACCA000CC7435 /* Signup.swift */; };
+		5E763569274ACCC900CC7435 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763568274ACCC900CC7435 /* MapView.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
 		A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */; };
 		A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E9274AC94D0041FD1C /* ContentView.swift */; };
@@ -82,6 +83,7 @@
 		5E763561274ACC0200CC7435 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		5E763564274ACC8400CC7435 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5E763566274ACCA000CC7435 /* Signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup.swift; sourceTree = "<group>"; };
+		5E763568274ACCC900CC7435 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B950E5274AC94D0041FD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				A5B950E9274AC94D0041FD1C /* ContentView.swift */,
 				5E763564274ACC8400CC7435 /* Login.swift */,
 				5E763566274ACCA000CC7435 /* Signup.swift */,
+				5E763568274ACCC900CC7435 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				5E76355B274ACBB800CC7435 /* Location.swift in Sources */,
 				5E763567274ACCA000CC7435 /* Signup.swift in Sources */,
 				A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */,
+				5E763569274ACCC900CC7435 /* MapView.swift in Sources */,
 				5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
