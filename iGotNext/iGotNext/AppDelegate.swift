@@ -6,7 +6,12 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
+
+// ref : https://firebase.google.com/codelabs/firestore-ios#3
+// https://github.com/firebase/snippets-ios/blob/6e0f6fb63dbd97f61c62522e09ffa16ce580fb9f/firestore/swift/firestore-smoketest/ViewController.swift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -14,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        
+        let db = Firestore.firestore()
         return true
     }
 
