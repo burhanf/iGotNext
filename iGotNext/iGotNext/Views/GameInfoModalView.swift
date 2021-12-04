@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct GameInfoModalView: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
+        
+        
         VStack{
+            Button("Press to dismiss") {
+                presentationMode.wrappedValue.dismiss()
+            }.font(.title)
+            .padding()
+            .background(Color.black)
             Image("basketball")
                 .resizable()
                 .frame(width: 300, height: 100, alignment: .top)
@@ -18,7 +26,7 @@ struct GameInfoModalView: View {
             Text("Organized by: Amir")
             Text("Number of spots available: 3/12")
             
-        }.navigationTitle("Game info modal")
+        }
     }
 }
 
