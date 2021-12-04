@@ -72,7 +72,7 @@ struct CreateGameView: View {
             Button(action: {
                 findCoordinates()
                 //TODO: need to retrieve location coordinates before adding the game to db
-                addGameData()
+                
             }){
                 Text("Add game")
             }
@@ -114,6 +114,7 @@ struct CreateGameView: View {
                 //set the coordinates
                 lat = coordinates.latitude
                 long = coordinates.longitude
+                addGameData()
             }
         })
     }
