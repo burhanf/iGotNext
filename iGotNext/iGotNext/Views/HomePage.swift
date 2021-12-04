@@ -101,7 +101,7 @@ struct HomePage: View {
                             ForEach(0..<gameViewModel.games.count) { i in
                                 
                                 //ZStack{
-                                    NavigationLink(destination: GameInformationView()){
+                                NavigationLink(destination: GameInformationView(passedInGame: $gameViewModel.games[i] )){
                                         
                                         ZStack{
                                         Image(gameViewModel.games[i].gameType?.lowercased() ?? "noimage")

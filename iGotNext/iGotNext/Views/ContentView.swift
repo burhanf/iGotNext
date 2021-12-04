@@ -40,9 +40,9 @@ struct ContentView: View {
                     }
                     // swift being swift
                     Group {
-                        NavigationLink(destination: GameInformationView()){
-                            Text("Game Information")
-                        }
+//                        NavigationLink(destination: GameInformationView()){
+//                            Text("Game Information")
+//                        }
                         
                         NavigationLink(destination: ReviewsView()){
                             Text("Reviews")
