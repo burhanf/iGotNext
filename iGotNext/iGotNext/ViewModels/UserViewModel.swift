@@ -8,22 +8,21 @@
 
 import UIKit
 import MapKit
-import FirebaseFirestore
-
+import Firebase
 //Reference: https://www.youtube.com/watch?v=f6u3AnOKZd0
 class UserViewModel: ObservableObject {
     
     @Published var users = [User]()
     
-    private let db = Firestore.firestore()
-
+    private let db = Firebase.Firestore.firestore()
+    
     func fetchData(){
+        
         db.collection("User").addSnapshotListener { (querySnapshot, err) in
             guard let documents = querySnapshot?.documents else {
                 print("No Documents")
                 return
-                }
-            
+            }
             self.users = documents.map { (queryDocumentSnapshot) -> User in
                 let data = queryDocumentSnapshot.data()
                 
@@ -40,13 +39,25 @@ class UserViewModel: ObservableObject {
                 
                 return fsUser
             }
-            }
         }
-    
+    }
+    func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
+        //validations
+        var user = Auth.auth().createUser(withEmail: email, password: password){ (result:AuthDataResult?, error:Error?) in
+            if((error == nil)){
+            self.db.collection("User").document((result?.user.uid)!).setData([
+                "firstName":firstName,
+                "lastName":lastName,
+                "skillLevel":skillLevel,
+                "age": age
+            ])
+        }
+        }
+    }
     //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
     func getUserById(idToSearch: String){
         let docRef = db.collection("User").document(idToSearch)
-
+        
         docRef.getDocument { (document, error) in
             if let document = document, document.exists {
                 let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
