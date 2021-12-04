@@ -44,8 +44,8 @@ struct CreateGameView: View {
         newGame.gameType = gameType
         
         //TODO: Add type checking
-        newGame.startTime = Double(startTime)
-        newGame.endTime = Double(endTime)
+        //newGame.startTime = Double(startTime)
+        //newGame.endTime = Double(endTime)
         //newGame.location = CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664)
         //newGame.numOfPlayers
     }

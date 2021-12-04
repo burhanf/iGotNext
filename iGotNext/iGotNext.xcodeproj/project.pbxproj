@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4641DAC92751EFC700FCFBF7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */; };
+		4641DACE2751F47700FCFBF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
 		5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763558274ACBA500CC7435 /* LocationViewModel.swift */; };
 		5E76355B274ACBB800CC7435 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76355A274ACBB800CC7435 /* Location.swift */; };
 		5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E76355F274ACBFB00CC7435 /* MapKit.framework */; };
@@ -22,7 +24,7 @@
 		5E763575274ACD7F00CC7435 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763574274ACD7F00CC7435 /* FriendsView.swift */; };
 		5E763577274ACD8E00CC7435 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763576274ACD8E00CC7435 /* HistoryView.swift */; };
 		5E763579274ACDA000CC7435 /* GameInfoModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763578274ACDA000CC7435 /* GameInfoModalView.swift */; };
-		606859C1274AD1A10060A34D /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 606859C0274AD1A10060A34D /* GoogleService-Info (1).plist */; };
+		606859C1274AD1A10060A34D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 606859C0274AD1A10060A34D /* GoogleService-Info.plist */; };
 		606859CF274AD6510060A34D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 606859CE274AD6510060A34D /* FirebaseMessaging */; };
 		606859D1274AD6510060A34D /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 606859D0274AD6510060A34D /* FirebaseDynamicLinks */; };
 		606859D3274AD6510060A34D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 606859D2274AD6510060A34D /* FirebaseStorage */; };
@@ -93,6 +95,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		4641DACD2751F47700FCFBF7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5E763558274ACBA500CC7435 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		5E76355A274ACBB800CC7435 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5E76355F274ACBFB00CC7435 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -108,7 +112,7 @@
 		5E763574274ACD7F00CC7435 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		5E763576274ACD8E00CC7435 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		5E763578274ACDA000CC7435 /* GameInfoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoModalView.swift; sourceTree = "<group>"; };
-		606859C0274AD1A10060A34D /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		606859C0274AD1A10060A34D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B950E5274AC94D0041FD1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B950E7274AC94D0041FD1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,11 +164,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4641DAC72751EF8500FCFBF7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5E763557274ACB6E00CC7435 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				5E763558274ACBA500CC7435 /* LocationViewModel.swift */,
 				5E76355A274ACBB800CC7435 /* Location.swift */,
+				4641DACD2751F47700FCFBF7 /* Game.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +234,8 @@
 		A5B950E4274AC94D0041FD1C /* iGotNext */ = {
 			isa = PBXGroup;
 			children = (
-				606859C0274AD1A10060A34D /* GoogleService-Info (1).plist */,
+				4641DAC72751EF8500FCFBF7 /* ViewModels */,
+				606859C0274AD1A10060A34D /* GoogleService-Info.plist */,
 				5E763563274ACC7500CC7435 /* Views */,
 				5E763557274ACB6E00CC7435 /* Models */,
 				A5B950E5274AC94D0041FD1C /* AppDelegate.swift */,
@@ -392,7 +406,7 @@
 				A5B950F2274AC94E0041FD1C /* LaunchScreen.storyboard in Resources */,
 				A5B950EF274AC94E0041FD1C /* Preview Assets.xcassets in Resources */,
 				A5B950EC274AC94E0041FD1C /* Assets.xcassets in Resources */,
-				606859C1274AD1A10060A34D /* GoogleService-Info (1).plist in Resources */,
+				606859C1274AD1A10060A34D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,12 +436,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E763575274ACD7F00CC7435 /* FriendsView.swift in Sources */,
+				4641DACE2751F47700FCFBF7 /* Game.swift in Sources */,
 				5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */,
 				5E76356F274ACD1000CC7435 /* CreateGameView.swift in Sources */,
 				5E763565274ACC8400CC7435 /* Login.swift in Sources */,
 				5E76356D274ACCFD00CC7435 /* HomePage.swift in Sources */,
 				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
 				5E76356B274ACCE900CC7435 /* UserProfile.swift in Sources */,
+				4641DAC92751EFC700FCFBF7 /* GameViewModel.swift in Sources */,
 				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
 				5E763579274ACDA000CC7435 /* GameInfoModalView.swift in Sources */,
 				5E763577274ACD8E00CC7435 /* HistoryView.swift in Sources */,
