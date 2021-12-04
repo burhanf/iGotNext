@@ -41,9 +41,9 @@ class GameViewModel: ObservableObject {
                 //let endTime = data["EndTime"]
                 let location = data["Location"] as! GeoPoint
                 
-                let max = data["MaxPlayers"] as! Int
+                let max = data["MaxPlayers"] as? Int ?? 0
                 let skill = data["SkillLevel"] as? String ?? ""
-                let totalNum = data["NumberOfPlayers"] as! Int
+                let totalNum = data["NumberOfPlayers"] as? Int ?? 0
                 
 //                print(gameType)
 //                print(startTime)
