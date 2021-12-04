@@ -11,12 +11,12 @@ import FirebaseFirestore
 
 
 
-struct GameTest: Identifiable{
-    let id = UUID()
-    var gameType : String?
-    var startTime : Double?
-    var endTime : Double?
-}
+//struct GameTest: Identifiable{
+//    let id = UUID()
+//    var gameType : String?
+//    var startTime : Double?
+//    var endTime : Double?
+//}
 
 //ref: https://www.youtube.com/watch?v=f6u3AnOKZd0
 class GameViewModel: ObservableObject {
@@ -41,13 +41,17 @@ class GameViewModel: ObservableObject {
                 //let endTime = data["EndTime"]
                 let location = data["Location"] as! GeoPoint
                 
+                let max = data["MaxPlayers"] as! Int
+                let skill = data["SkillLevel"] as? String ?? ""
+                let totalNum = data["NumberOfPlayers"] as! Int
+                
 //                print(gameType)
 //                print(startTime)
 //                print(endTime)
 //                print(location)
                 //print(location[1])
                 
-                let game = Game(gameType: gameType, startTime: startTime, endTime: endTime, location: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
+                let game = Game(gameType: gameType, startTime: startTime, endTime: endTime, loc: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), max: max, numPlayers: totalNum, skill: skill)
                 
                 print(self.games.count)
                 

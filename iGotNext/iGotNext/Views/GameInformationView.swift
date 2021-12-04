@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import MapKit
 
 //Game instance would be passed into the view
 struct GameInformationView: View {
     //private var passedInGame = Game(gameType: "Basketball", startTime : 1.50, endTime: 1.60)
-    private var passedInGame = Game(gameType: "Basketball", startTime : Date(), endTime: Date())
+    private var passedInGame = Game(gameType: "Basketball", startTime : Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), max: 12, numPlayers: 3, skill: "beginner")
     
     //, location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), CLLocation not working
     

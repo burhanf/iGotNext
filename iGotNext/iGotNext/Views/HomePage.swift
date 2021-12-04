@@ -38,11 +38,11 @@ struct HomePage: View {
 //    ]
     
     
-    
-        @State var listOfGames = [
-            Game(gameType: "Dodgeball", startTime : Date(), endTime: Date(), location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664)),
-            Game(gameType: "Dodgeball", startTime : Date(), endTime: Date(), location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664))
-        ]
+//
+//        @State var listOfGames = [
+//            Game(gameType: "Dodgeball", startTime : Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664)),
+//            Game(gameType: "Dodgeball", startTime : Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664))
+//        ]
     
     @State var sportsTags = [
        "Basketball", "Soccer", "Tennis", "Basketball", "Soccer", "Tennis"
@@ -97,6 +97,7 @@ struct HomePage: View {
                         Text("Loading...")
                     }
                     else{
+                        
                             ForEach(0..<gameViewModel.games.count) { i in
                                 
                                 //ZStack{
@@ -149,26 +150,26 @@ struct HomePage: View {
                 .frame(width:  UIScreen.main.bounds.size.width - 40, alignment: .leading)
             
             ScrollView(.horizontal, showsIndicators: false){
-                HStack{
-                    ForEach(0..<listOfGames.count) { i in
-                        VStack{
-                            Button(action:{
-                            }){
-                                ZStack{
-                                    Image("basketball")
-                                         .resizable()
-                                         .scaledToFill()
-                                         .frame(width: 120, height: 120)
-                                         .cornerRadius(20)
-                                }
-                            }
-                            Text(listOfGames[i].gameType!)
-                               .font(.system(size: 12, weight: .bold))
-                        }
-                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                    }
-                }
-                .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
+//                HStack{
+//                    ForEach(0..<listOfGames.count) { i in
+//                        VStack{
+//                            Button(action:{
+//                            }){
+//                                ZStack{
+//                                    Image("basketball")
+//                                         .resizable()
+//                                         .scaledToFill()
+//                                         .frame(width: 120, height: 120)
+//                                         .cornerRadius(20)
+//                                }
+//                            }
+//                            Text(listOfGames[i].gameType!)
+//                               .font(.system(size: 12, weight: .bold))
+//                        }
+//                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+//                    }
+//                }
+//                .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 0))
             }
         }
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 100, alignment: .top)

@@ -5,36 +5,41 @@
 //  Created by Burhan Faquiri on 2021-11-18.
 //
 
+//TODO: add styling, get specific user
+
+
 import SwiftUI
 
-struct User: Identifiable{
-    let id = UUID()
-    var firstName : String?
-    var lastName : String?
-    var age : Int?
-    var avgRating : Double?
-}
-
 struct UserProfile: View {
+    var sampleUser = User(firstName: "Burhan", lastName: "Faquiri", age: 21, skill: "Beginner")
     
-    private var sampleUser = User(firstName: "Burhan", lastName: "Faquiri", age: 21, avgRating: 5.00)
+    //instance of viewmodel
+    @ObservedObject private var userViewModel = UserViewModel()
     
     
     var body: some View {
         VStack{
+            if(userViewModel.users.count == 0){
+                Text("Loading...")
+            }
+            else{
             Image("basketball")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width: 150, height: 150, alignment: .center)
             
-            Text("\(sampleUser.firstName ?? "No first name") \(sampleUser.lastName ?? "No last name")")
+            Text("\(userViewModel.users[0].firstName ?? "No first name") \(userViewModel.users[0].lastName ?? "No last name")")
                 .font(.headline)
                 .bold()
-            Text("\(sampleUser.age ?? 0) years old")
+            Text("\(userViewModel.users[0].age ?? 0) years old")
                 .font(.subheadline)
-            Text("Average rating: \(sampleUser.avgRating ?? 0.0)")
+            Text("Skill level: \(userViewModel.users[0].skillLevel ?? "Beginner")")
                 .font(.subheadline)
                 .foregroundColor(.yellow)
+            }
+        }
+        .onAppear(){
+            self.userViewModel.fetchData()
         }
     }
 }

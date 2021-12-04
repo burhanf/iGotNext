@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State var loginToggle = false
+    
+    //SAVE LOGGED IN USER HERE TO PASS IT INTO USERPROFILE
+//    var loggedInUser : User
     var body: some View {
         VStack{
             NavigationView{

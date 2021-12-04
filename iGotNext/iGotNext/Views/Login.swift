@@ -5,9 +5,13 @@
 //  Created by ofir david on 2021-11-13.
 //
 
+//passes the signed in user to user profile
+
 import SwiftUI
 
 struct Login: View {
+    
+    //make object of user from signed in information
     @State var username = ""
     @State var password = ""
     var body: some View {

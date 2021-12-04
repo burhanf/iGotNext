@@ -5,10 +5,13 @@
 //  Created by ofir david on 2021-11-13.
 //
 
+
+
+
 import SwiftUI
 
 struct Signup: View {
-        @State var username = ""
+    @State var username = ""
         @State var password = ""
         var body: some View {
             VStack{
