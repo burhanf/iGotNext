@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State var loginToggle = false
-    
+    @State var showingModal = false
     //SAVE LOGGED IN USER HERE TO PASS IT INTO USERPROFILE
-//    var loggedInUser : User
+    //    var loggedInUser : User
     var body: some View {
         VStack{
             NavigationView{
@@ -40,9 +40,9 @@ struct ContentView: View {
                     }
                     // swift being swift
                     Group {
-//                        NavigationLink(destination: GameInformationView()){
-//                            Text("Game Information")
-//                        }
+                        //                        NavigationLink(destination: GameInformationView()){
+                        //                            Text("Game Information")
+                        //                        }
                         
                         NavigationLink(destination: ReviewsView()){
                             Text("Reviews")
@@ -53,8 +53,14 @@ struct ContentView: View {
                         NavigationLink(destination: HistoryView()){
                             Text("History")
                         }
-                        NavigationLink(destination: GameInfoModalView()){
-                            Text("Modal")
+                        Button(action: {
+                            self.showingModal.toggle()
+                        }) {
+                            Text("Show Sheet View")
+                        }.sheet(isPresented: $showingModal, onDismiss: {
+                            print("Code executed when the sheet dismisses")
+                        }) {
+                            GameInfoModalView()
                         }
                     }
                 }
