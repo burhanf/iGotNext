@@ -11,11 +11,13 @@ import MapKit
 import Firebase
 //Reference: https://www.youtube.com/watch?v=f6u3AnOKZd0
 class UserViewModel: ObservableObject {
-    
+    let auth = Auth.auth()
     @Published var users = [User]()
-    
+    @Published var signupSuccessful = false
     private let db = Firebase.Firestore.firestore()
-    
+    var isSignedIn: Bool {
+        return auth.currentUser != nil
+    }
     func fetchData(){
         
         db.collection("User").addSnapshotListener { (querySnapshot, err) in
@@ -31,7 +33,6 @@ class UserViewModel: ObservableObject {
                 let userFirstName = data["firstName"]  as? String ?? ""
                 let userLastName = data["lastName"]  as? String ?? ""
                 let userSkillLevel = data["skillLevel"]  as? String ?? ""
-                
                 //create a user object from the attributes retrieved in firestore
                 let fsUser = User(firstName: userFirstName, lastName: userLastName, age: userAge, skill: userSkillLevel)
                 
@@ -41,17 +42,28 @@ class UserViewModel: ObservableObject {
             }
         }
     }
+    func signIn(email: String, password: String){
+        auth.signIn(withEmail: email,password: password) { result, error in
+            guard result != nil, error == nil else{
+                return
+            }
+        }
+    }
     func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
         //validations
-        var user = Auth.auth().createUser(withEmail: email, password: password){ (result:AuthDataResult?, error:Error?) in
-            if((error == nil)){
+        var user = try Auth.auth().createUser(withEmail: email, password: password){ result, error in
+            guard result != nil, error == nil else{
+                return
+            }
             self.db.collection("User").document((result?.user.uid)!).setData([
                 "firstName":firstName,
                 "lastName":lastName,
                 "skillLevel":skillLevel,
                 "age": age
             ])
-        }
+            DispatchQueue.main.async {
+                self.signupSuccessful = true
+            }
         }
     }
     //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
@@ -67,6 +79,4 @@ class UserViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }

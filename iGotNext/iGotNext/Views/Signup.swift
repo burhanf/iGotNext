@@ -41,6 +41,9 @@ struct Signup: View {
                 NavigationLink(destination: HomePage(), isActive: $navigate){
                     Button("Signup"){
                         userViewModel.createAccount(email: email, password: password, age: Int(age)!, firstName: firstName, lastName: lastName, skillLevel: skillLevel)
+                        if(userViewModel.signupSuccessful){
+                            navigate = true
+                        }
                     }
                 }
             }.padding()
