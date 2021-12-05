@@ -14,13 +14,14 @@ struct Signup: View {
     
     @State var email = ""
     @State var password = ""
-    @State var navigate = false
+    
     @State var age = ""
     @State var firstName = ""
     @State var lastName = ""
     @State var confirmPassword = ""
     @State var skillLevel = "Beginner"
     var userViewModel = UserViewModel()
+    @State var navigate = false
     var body: some View {
         NavigationView{
             VStack{
@@ -41,9 +42,7 @@ struct Signup: View {
                 NavigationLink(destination: HomePage(), isActive: $navigate){
                     Button("Signup"){
                         userViewModel.createAccount(email: email, password: password, age: Int(age)!, firstName: firstName, lastName: lastName, skillLevel: skillLevel)
-                        if(userViewModel.signupSuccessful){
-                            navigate = true
-                        }
+                        navigate = userViewModel.isSignedIn
                     }
                 }
             }.padding()
