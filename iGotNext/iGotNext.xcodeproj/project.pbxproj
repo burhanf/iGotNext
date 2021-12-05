@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4641DAC92751EFC700FCFBF7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */; };
 		4641DACE2751F47700FCFBF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
+		4CA379F2275C54CE008D41AC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F1275C54CE008D41AC /* Review.swift */; };
+		4CA379F4275C557B008D41AC /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F3275C557B008D41AC /* ReviewViewModel.swift */; };
 		5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763558274ACBA500CC7435 /* LocationViewModel.swift */; };
 		5E76355B274ACBB800CC7435 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76355A274ACBB800CC7435 /* Location.swift */; };
 		5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E76355F274ACBFB00CC7435 /* MapKit.framework */; };
@@ -99,6 +101,8 @@
 /* Begin PBXFileReference section */
 		4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		4641DACD2751F47700FCFBF7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		4CA379F1275C54CE008D41AC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		4CA379F3275C557B008D41AC /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		5E763558274ACBA500CC7435 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		5E76355A274ACBB800CC7435 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5E76355F274ACBFB00CC7435 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -173,6 +177,7 @@
 			children = (
 				4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */,
 				A587C51C275BDC0F009BD19E /* UserViewModel.swift */,
+				4CA379F3275C557B008D41AC /* ReviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				5E76355A274ACBB800CC7435 /* Location.swift */,
 				4641DACD2751F47700FCFBF7 /* Game.swift */,
 				A587C517275BD725009BD19E /* User.swift */,
+				4CA379F1275C54CE008D41AC /* Review.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -443,11 +449,13 @@
 			files = (
 				5E763575274ACD7F00CC7435 /* FriendsView.swift in Sources */,
 				4641DACE2751F47700FCFBF7 /* Game.swift in Sources */,
+				4CA379F2275C54CE008D41AC /* Review.swift in Sources */,
 				5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */,
 				5E76356F274ACD1000CC7435 /* CreateGameView.swift in Sources */,
 				5E763565274ACC8400CC7435 /* Login.swift in Sources */,
 				5E76356D274ACCFD00CC7435 /* HomePage.swift in Sources */,
 				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
+				4CA379F4275C557B008D41AC /* ReviewViewModel.swift in Sources */,
 				5E76356B274ACCE900CC7435 /* UserProfile.swift in Sources */,
 				4641DAC92751EFC700FCFBF7 /* GameViewModel.swift in Sources */,
 				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
