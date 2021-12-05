@@ -11,6 +11,7 @@
 		4641DACE2751F47700FCFBF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
 		4CA379F2275C54CE008D41AC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F1275C54CE008D41AC /* Review.swift */; };
 		4CA379F4275C557B008D41AC /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F3275C557B008D41AC /* ReviewViewModel.swift */; };
+		4CA379F6275C5AE4008D41AC /* CreateReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F5275C5AE4008D41AC /* CreateReviewView.swift */; };
 		5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763558274ACBA500CC7435 /* LocationViewModel.swift */; };
 		5E76355B274ACBB800CC7435 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76355A274ACBB800CC7435 /* Location.swift */; };
 		5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E76355F274ACBFB00CC7435 /* MapKit.framework */; };
@@ -103,6 +104,7 @@
 		4641DACD2751F47700FCFBF7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4CA379F1275C54CE008D41AC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4CA379F3275C557B008D41AC /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		4CA379F5275C5AE4008D41AC /* CreateReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewView.swift; sourceTree = "<group>"; };
 		5E763558274ACBA500CC7435 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		5E76355A274ACBB800CC7435 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5E76355F274ACBFB00CC7435 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -218,6 +220,7 @@
 				5E763574274ACD7F00CC7435 /* FriendsView.swift */,
 				5E763576274ACD8E00CC7435 /* HistoryView.swift */,
 				5E763578274ACDA000CC7435 /* GameInfoModalView.swift */,
+				4CA379F5275C5AE4008D41AC /* CreateReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				A5B950EA274AC94D0041FD1C /* ContentView.swift in Sources */,
 				5E763569274ACCC900CC7435 /* MapView.swift in Sources */,
 				5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */,
+				4CA379F6275C5AE4008D41AC /* CreateReviewView.swift in Sources */,
 				A587C518275BD725009BD19E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

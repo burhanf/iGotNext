@@ -33,11 +33,11 @@ struct ReviewsView: View {
                 .frame(width:  UIScreen.main.bounds.size.width - 40, alignment: .leading)
             
             ScrollView(showsIndicators: false){
-                if(reviewViewModel.reviews.count == 0){
+                if(reviewViewModel.userReviews.count == 0){
                     Text("Loading...")
                 }
                     else{
-                        ForEach(0..<reviewViewModel.reviews.count) { i in
+                        ForEach(0..<reviewViewModel.userReviews.count) { i in
                             Button(action:{
                             }){
                                 ZStack{
@@ -54,7 +54,7 @@ struct ReviewsView: View {
                                             .shadow(radius: 10)
                                             .overlay(Circle().stroke(Color.white, lineWidth: 3))
                                             .frame(width: 80, height: 260, alignment: .bottomLeading)
-                                        Text(reviewViewModel.reviews[i].reviewContent ?? "")
+                                        Text(reviewViewModel.userReviews[i].reviewContent ?? "")
         //                                    .frame(width:  UIScreen.main.bounds.size.width - 70, alignment: .leading)
                                     }
                                 }
@@ -70,6 +70,7 @@ struct ReviewsView: View {
         .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 100, alignment: .top)
         .onAppear(){
             self.reviewViewModel.fetchData()
+            self.reviewViewModel.getReviewsByUser()
         }
     }
 }
