@@ -12,16 +12,25 @@ import SwiftUI
 struct Login: View {
     
     //make object of user from signed in information
-    @State var username = ""
+    @State var email = ""
     @State var password = ""
+    @State var navigate = false
+    var userViewModel = UserViewModel()
     var body: some View {
-        VStack{
-            TextField("Username",text: $username).padding()
-            TextField("Password",text: $password).padding()
-            Spacer()
-        }.padding()
-        Button("Login"){
-            print("Login")
+        NavigationView{
+            VStack{
+                TextField("Email",text: $email).autocapitalization(.none).padding()
+                SecureField("Password",text: $password).padding()
+                Spacer()
+                NavigationLink(destination: HomePage(), isActive: $navigate){
+                    Button("Sign in"){
+                        userViewModel.signIn(email: email , password: password)
+                        if(userViewModel.isSignedIn){
+                            navigate = true
+                        }
+                    }
+                }
+            }.padding()
         }
     }
 }

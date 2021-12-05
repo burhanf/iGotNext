@@ -14,9 +14,11 @@ class UserViewModel: ObservableObject {
     let auth = Auth.auth()
     @Published var users = [User]()
     @Published var signupSuccessful = false
+    @Published var signinSuccessful = false
+    @Published var signedIn = false
     private let db = Firebase.Firestore.firestore()
     var isSignedIn: Bool {
-        return auth.currentUser != nil
+        return signedIn
     }
     func fetchData(){
         
@@ -45,7 +47,11 @@ class UserViewModel: ObservableObject {
     func signIn(email: String, password: String){
         auth.signIn(withEmail: email,password: password) { result, error in
             guard result != nil, error == nil else{
+                self.signedIn = false
                 return
+            }
+            DispatchQueue.main.async {
+                self.signedIn = true
             }
         }
     }
@@ -53,6 +59,7 @@ class UserViewModel: ObservableObject {
         //validations
         var user = try Auth.auth().createUser(withEmail: email, password: password){ result, error in
             guard result != nil, error == nil else{
+                self.signedIn = false
                 return
             }
             self.db.collection("User").document((result?.user.uid)!).setData([
@@ -62,7 +69,7 @@ class UserViewModel: ObservableObject {
                 "age": age
             ])
             DispatchQueue.main.async {
-                self.signupSuccessful = true
+                self.signedIn = true
             }
         }
     }
