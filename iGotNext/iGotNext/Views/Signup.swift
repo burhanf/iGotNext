@@ -9,12 +9,13 @@
 
 
 import SwiftUI
-
+import Firebase
 struct Signup: View {
     
     @State var email = ""
     @State var password = ""
-    
+    var auth = Auth.auth()
+    private let db = Firebase.Firestore.firestore()
     @State var age = ""
     @State var firstName = ""
     @State var lastName = ""
@@ -37,15 +38,30 @@ struct Signup: View {
                     Text("Intermediate").tag("Intermediate")
                 }
                 .pickerStyle(SegmentedPickerStyle())
-
+                
                 Spacer()
                 NavigationLink(destination: HomePage(), isActive: $navigate){
                     Button("Signup"){
-                        userViewModel.createAccount(email: email, password: password, age: Int(age)!, firstName: firstName, lastName: lastName, skillLevel: skillLevel)
-                        navigate = userViewModel.isSignedIn
+                        createAccount(email: email, password: password, age: Int(age)!, firstName: firstName, lastName: lastName, skillLevel: skillLevel)
                     }
                 }
             }.padding()
+        }
+    }
+    func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
+        //validations
+        var user = try Auth.auth().createUser(withEmail: email, password: password){ result, error in
+            guard result != nil, error == nil else{
+                navigate = false
+                return
+            }
+            self.db.collection("User").document((result?.user.uid)!).setData([
+                "firstName":firstName,
+                "lastName":lastName,
+                "skillLevel":skillLevel,
+                "age": age
+            ])
+            navigate = true
         }
     }
 }

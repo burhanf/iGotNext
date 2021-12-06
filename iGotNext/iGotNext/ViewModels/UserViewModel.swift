@@ -44,35 +44,6 @@ class UserViewModel: ObservableObject {
             }
         }
     }
-    func signIn(email: String, password: String){
-        auth.signIn(withEmail: email,password: password) { result, error in
-            guard result != nil, error == nil else{
-                self.signedIn = false
-                return
-            }
-            DispatchQueue.main.async {
-                self.signedIn = true
-            }
-        }
-    }
-    func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
-        //validations
-        var user = try Auth.auth().createUser(withEmail: email, password: password){ result, error in
-            guard result != nil, error == nil else{
-                self.signedIn = false
-                return
-            }
-            self.db.collection("User").document((result?.user.uid)!).setData([
-                "firstName":firstName,
-                "lastName":lastName,
-                "skillLevel":skillLevel,
-                "age": age
-            ])
-            DispatchQueue.main.async {
-                self.signedIn = true
-            }
-        }
-    }
     //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
     func getUserById(idToSearch: String){
         let docRef = db.collection("User").document(idToSearch)

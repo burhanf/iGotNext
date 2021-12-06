@@ -8,14 +8,14 @@
 //passes the signed in user to user profile
 
 import SwiftUI
-
+import Firebase
 struct Login: View {
     
     //make object of user from signed in information
     @State var email = ""
     @State var password = ""
     @State var navigate = false
-    var userViewModel = UserViewModel()
+    let auth = Auth.auth()
     var body: some View {
         NavigationView{
             VStack{
@@ -24,16 +24,23 @@ struct Login: View {
                 Spacer()
                 NavigationLink(destination: HomePage(), isActive: $navigate){
                     Button("Sign in"){
-                        userViewModel.signIn(email: email , password: password)
-                        if(userViewModel.isSignedIn){
-                            navigate = true
-                        }
+                        signIn(email: email, password: password)
                     }
                 }
             }.padding()
         }
     }
+    func signIn(email: String, password: String){
+        auth.signIn(withEmail: email,password: password) { result, error in
+            guard result != nil, error == nil else{
+                navigate = false
+                return
+            }
+            navigate = true
+        }
+    }
 }
+
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
