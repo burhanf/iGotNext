@@ -42,6 +42,8 @@
 		A5027E5827600126008A0937 /* WatchGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E532760001B008A0937 /* WatchGameViewModel.swift */; };
 		A5027E5927600126008A0937 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
 		A5027E5A27600126008A0937 /* ConnectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */; };
+		A5027E5F27600391008A0937 /* WatchGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E5E27600391008A0937 /* WatchGameView.swift */; };
+		A5027E672760074E008A0937 /* WatchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E662760074E008A0937 /* WatchGame.swift */; };
 		A587C518275BD725009BD19E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C517275BD725009BD19E /* User.swift */; };
 		A587C51D275BDC0F009BD19E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C51C275BDC0F009BD19E /* UserViewModel.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
@@ -128,6 +130,8 @@
 		606859C0274AD1A10060A34D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionProvider.swift; sourceTree = "<group>"; };
 		A5027E532760001B008A0937 /* WatchGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGameViewModel.swift; sourceTree = "<group>"; };
+		A5027E5E27600391008A0937 /* WatchGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGameView.swift; sourceTree = "<group>"; };
+		A5027E662760074E008A0937 /* WatchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchGame.swift; sourceTree = "<group>"; };
 		A587C517275BD725009BD19E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A587C51C275BDC0F009BD19E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,7 @@
 				A587C517275BD725009BD19E /* User.swift */,
 				4CA379F1275C54CE008D41AC /* Review.swift */,
 				A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */,
+				A5027E662760074E008A0937 /* WatchGame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 			children = (
 				A5B9510A274AC94F0041FD1C /* HostingController.swift */,
 				A5B9510C274AC94F0041FD1C /* ContentView.swift */,
+				A5027E5E27600391008A0937 /* WatchGameView.swift */,
 				A5B9510E274AC94F0041FD1C /* ExtensionDelegate.swift */,
 				A5B95110274AC94F0041FD1C /* ComplicationController.swift */,
 				A5B95112274AC94F0041FD1C /* Assets.xcassets */,
@@ -460,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E763575274ACD7F00CC7435 /* FriendsView.swift in Sources */,
+				A5027E672760074E008A0937 /* WatchGame.swift in Sources */,
 				4641DACE2751F47700FCFBF7 /* Game.swift in Sources */,
 				4CA379F2275C54CE008D41AC /* Review.swift in Sources */,
 				5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */,
@@ -493,6 +500,7 @@
 			files = (
 				A5027E5827600126008A0937 /* WatchGameViewModel.swift in Sources */,
 				A5027E5927600126008A0937 /* Game.swift in Sources */,
+				A5027E5F27600391008A0937 /* WatchGameView.swift in Sources */,
 				A5027E5A27600126008A0937 /* ConnectionProvider.swift in Sources */,
 				A5B9510D274AC94F0041FD1C /* ContentView.swift in Sources */,
 				A5B95111274AC94F0041FD1C /* ComplicationController.swift in Sources */,

@@ -9,8 +9,8 @@ import UIKit
 import MapKit
 import Foundation
 
-class Game: NSObject, ObservableObject ,NSSecureCoding{
-    public static var supportsSecureCoding: Bool = true
+class Game: NSObject{
+//    public static var supportsSecureCoding: Bool = true
     
     let id = UUID()
     @Published var gameType : String?
@@ -35,43 +35,43 @@ class Game: NSObject, ObservableObject ,NSSecureCoding{
     
 //        super.init()
     }
-    public required convenience init?(coder decoder: NSCoder) {
-        
-        guard let gameType = decoder.decodeObject(forKey: "gameType") as? String,
-            let startTime = decoder.decodeObject(forKey: "startTime") as? Date,
-            let endTime = decoder.decodeObject(forKey: "endTime") as? Date,
-            let location = decoder.decodeObject(forKey: "location") as? CLLocationCoordinate2D,
-            let maxPlayers = decoder.decodeObject(forKey: "maxPlayers") as? Int,
-            let numOfPlayers = decoder.decodeObject(forKey: "numOfPlayers") as? Int,
-            let skillLevel = decoder.decodeObject(forKey: "skillLevel") as? String
-            else { return nil }
-        
-        self.init()
-        self.initWithData(
-            gameType: gameType as String,
-            startTime: startTime as Date,
-            endTime: endTime as Date,
-            loc : location as CLLocationCoordinate2D,
-            max : maxPlayers as Int,
-            numPlayers : numOfPlayers as Int,
-            skill : skillLevel as String
-        )
-    }
+//    public required convenience init?(coder decoder: NSCoder) {
+//
+//        guard let gameType = decoder.decodeObject(forKey: "gameType") as? String,
+//            let startTime = decoder.decodeObject(forKey: "startTime") as? Date,
+//            let endTime = decoder.decodeObject(forKey: "endTime") as? Date,
+//            let location = decoder.decodeObject(forKey: "location") as? CLLocationCoordinate2D,
+//            let maxPlayers = decoder.decodeObject(forKey: "maxPlayers") as? Int,
+//            let numOfPlayers = decoder.decodeObject(forKey: "numOfPlayers") as? Int,
+//            let skillLevel = decoder.decodeObject(forKey: "skillLevel") as? String
+//            else { return nil }
+//
+//        self.init()
+//        self.initWithData(
+//            gameType: gameType as String,
+//            startTime: startTime as Date,
+//            endTime: endTime as Date,
+//            loc : location as CLLocationCoordinate2D,
+//            max : maxPlayers as Int,
+//            numPlayers : numOfPlayers as Int,
+//            skill : skillLevel as String
+//        )
+//    }
     
-    public func encode(with coder: NSCoder) {
-        coder.encode(self.gameType, forKey: "gameType")
-        coder.encode(self.startTime, forKey: "startTime")
-        coder.encode(self.endTime, forKey: "endTime")
-        coder.encode(self.location, forKey: "location")
-        coder.encode(self.maxPlayers, forKey: "maxPlayers")
-        coder.encode(self.numOfPlayers, forKey: "numOfPlayers")
-        coder.encode(self.skillLevel, forKey: "skillLevel")
-        
-    }
-    
-    public static func == (lhs: Game, rhs: Game) -> Bool {
-        return (lhs.gameType == rhs.gameType) && (lhs.skillLevel == rhs.skillLevel) ? true : false
-    }
+//    public func encode(with coder: NSCoder) {
+//        coder.encode(self.gameType, forKey: "gameType")
+//        coder.encode(self.startTime, forKey: "startTime")
+//        coder.encode(self.endTime, forKey: "endTime")
+//        coder.encode(self.location, forKey: "location")
+//        coder.encode(self.maxPlayers, forKey: "maxPlayers")
+//        coder.encode(self.numOfPlayers, forKey: "numOfPlayers")
+//        coder.encode(self.skillLevel, forKey: "skillLevel")
+//
+//    }
+//
+//    public static func == (lhs: Game, rhs: Game) -> Bool {
+//        return (lhs.gameType == rhs.gameType) && (lhs.skillLevel == rhs.skillLevel) ? true : false
+//    }
 }
     
     //TODO get the location lat and long from a text user input
