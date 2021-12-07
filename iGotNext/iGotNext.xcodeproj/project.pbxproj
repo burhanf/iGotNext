@@ -39,6 +39,9 @@
 		606859DF274AD6510060A34D /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 606859DE274AD6510060A34D /* FirebasePerformance */; };
 		A5027E4F275FFEC5008A0937 /* ConnectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */; };
 		A5027E542760001B008A0937 /* WatchGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E532760001B008A0937 /* WatchGameViewModel.swift */; };
+		A5027E5827600126008A0937 /* WatchGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E532760001B008A0937 /* WatchGameViewModel.swift */; };
+		A5027E5927600126008A0937 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
+		A5027E5A27600126008A0937 /* ConnectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */; };
 		A587C518275BD725009BD19E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C517275BD725009BD19E /* User.swift */; };
 		A587C51D275BDC0F009BD19E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C51C275BDC0F009BD19E /* UserViewModel.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
@@ -488,6 +491,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5027E5827600126008A0937 /* WatchGameViewModel.swift in Sources */,
+				A5027E5927600126008A0937 /* Game.swift in Sources */,
+				A5027E5A27600126008A0937 /* ConnectionProvider.swift in Sources */,
 				A5B9510D274AC94F0041FD1C /* ContentView.swift in Sources */,
 				A5B95111274AC94F0041FD1C /* ComplicationController.swift in Sources */,
 				A5B9510B274AC94F0041FD1C /* HostingController.swift in Sources */,
