@@ -37,6 +37,7 @@
 		606859DB274AD6510060A34D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 606859DA274AD6510060A34D /* FirebaseDatabase */; };
 		606859DD274AD6510060A34D /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 606859DC274AD6510060A34D /* FirebaseFunctions */; };
 		606859DF274AD6510060A34D /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = 606859DE274AD6510060A34D /* FirebasePerformance */; };
+		A5027E4F275FFEC5008A0937 /* ConnectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */; };
 		A587C518275BD725009BD19E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C517275BD725009BD19E /* User.swift */; };
 		A587C51D275BDC0F009BD19E /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587C51C275BDC0F009BD19E /* UserViewModel.swift */; };
 		A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B950E5274AC94D0041FD1C /* AppDelegate.swift */; };
@@ -121,6 +122,7 @@
 		5E763576274ACD8E00CC7435 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		5E763578274ACDA000CC7435 /* GameInfoModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoModalView.swift; sourceTree = "<group>"; };
 		606859C0274AD1A10060A34D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionProvider.swift; sourceTree = "<group>"; };
 		A587C517275BD725009BD19E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A587C51C275BDC0F009BD19E /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		A5B950E2274AC94D0041FD1C /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 				4641DACD2751F47700FCFBF7 /* Game.swift */,
 				A587C517275BD725009BD19E /* User.swift */,
 				4CA379F1275C54CE008D41AC /* Review.swift */,
+				A5027E4E275FFEC5008A0937 /* ConnectionProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A5B950E8274AC94D0041FD1C /* SceneDelegate.swift in Sources */,
 				5E763579274ACDA000CC7435 /* GameInfoModalView.swift in Sources */,
 				5E763577274ACD8E00CC7435 /* HistoryView.swift in Sources */,
+				A5027E4F275FFEC5008A0937 /* ConnectionProvider.swift in Sources */,
 				5E76355B274ACBB800CC7435 /* Location.swift in Sources */,
 				A587C51D275BDC0F009BD19E /* UserViewModel.swift in Sources */,
 				5E763567274ACCA000CC7435 /* Signup.swift in Sources */,

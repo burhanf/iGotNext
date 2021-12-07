@@ -51,7 +51,8 @@ class GameViewModel: ObservableObject {
 //                print(location)
                 //print(location[1])
                 
-                let game = Game(gameType: gameType, startTime: startTime, endTime: endTime, loc: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), max: max, numPlayers: totalNum, skill: skill)
+                let game = Game()
+                game.initWithData(gameType: gameType, startTime: startTime, endTime: endTime, loc: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), max: max, numPlayers: totalNum, skill: skill)
                 
                 print(self.games.count)
                 
