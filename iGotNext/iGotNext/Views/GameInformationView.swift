@@ -22,14 +22,6 @@ struct GameInformationView: View {
     
     
     
-    //WATCH
-    //initialize program view model
-    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
-    
-    //creating another connection provider because swift is finnicky?
-    let connect = ConnectionProvider()
-    
-    @State var games : [Game] = [] //initially empty
     
     
     var body: some View {
@@ -42,12 +34,6 @@ struct GameInformationView: View {
             Text("End time: \(passedInGame.endTime ?? Date())")
             Text("Number of spots available: \(passedInGame.numOfPlayers ?? 0) / \(passedInGame.maxPlayers ?? 0)")
             
-        }.onAppear(){
-            //FOR WATCH
-            //connect when app loads
-            viewModel.connectivityProvider.connect()
-            viewModel.connectivityProvider.initFakeDetails()
-            self.games = viewModel.connectivityProvider.games
         }
         .navigationTitle("\(passedInGame.gameType ?? "No game")")
         

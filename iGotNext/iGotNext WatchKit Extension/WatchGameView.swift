@@ -7,21 +7,19 @@
 
 import SwiftUI
 struct GameView : View{
-    var game : Game
+    var game : WatchGame
     var body : some View{
         VStack{
             //Text("Location: \(game.location?.latitude ?? defaultLocation.latitude) & \(game.location?.longitude ?? defaultLocation.longitude)")
             Text("Game type: \(game.gameType ?? "No game type")")
-            Text("Start time: \(game.startTime ?? Date())")
-            Text("End time: \(game.endTime ?? Date())")
-            Text("Number of spots available: \(game.numOfPlayers ?? 0) / \(game.maxPlayers ?? 0)")
+            Text("Number of spots available: \(game.numOfPlayers ?? "0") / \(game.maxPlayers ?? "0")")
         }
     }
 }
 
 struct WatchGameView: View {
     let viewModel : WatchGameViewModel
-    @State var games : [Game] = []
+    @State var games : [WatchGame] = []
     
     var body: some View {
         VStack{

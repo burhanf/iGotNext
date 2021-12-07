@@ -14,8 +14,8 @@ import MapKit
 class ConnectionProvider: NSObject, WCSessionDelegate {
     
     private let session: WCSession
-    var games : [Game] = []
-    var receivedGames : [Game] = []
+    var games : [WatchGame] = []
+    var receivedGames : [WatchGame] = []
     var lastMessage: CFAbsoluteTime = 0
     
     init(session: WCSession = .default) {
@@ -77,11 +77,11 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
             print("gameData no reply handler")
             
           // step 2b - deserialize the data from the watch
-            NSKeyedUnarchiver.setClass(Game.self, forClassName: "Game")
+            NSKeyedUnarchiver.setClass(WatchGame.self, forClassName: "WatchGame")
             // causes app crash because decode not linked properly error
             // above line of code needed to prevent this crash
 
-            let loadedPerson =   try! NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [Game.self], from: loadedData as! Data) as? [Game]
+            let loadedPerson =   try! NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [WatchGame.self], from: loadedData as! Data) as? [WatchGame]
                 
             self.receivedGames = loadedPerson!
             print("Game received")
@@ -103,14 +103,14 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
          */
         
         games.removeAll()
-        let gameObj = Game()
+        let gameObj = WatchGame()
         //TODO this needs to be passed in
-        gameObj.initWithData(gameType: "Bball", startTime: Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: 0, longitude: 0), max: 14, numPlayers: 10, skill: "Beginner")
+        gameObj.initWithData(gameType: "Bball", max: "14", numPlayers: "10", skill: "Beginner")
         games.append(gameObj)
     
         
         // step 6h - send data to watch.
-        NSKeyedArchiver.setClassName("Game", for: Game.self)
+        NSKeyedArchiver.setClassName("WatchGame", for: WatchGame.self)
         let gameData = try! NSKeyedArchiver.archivedData(withRootObject: games, requiringSecureCoding: true)
         sendWatchMessage(gameData)
         

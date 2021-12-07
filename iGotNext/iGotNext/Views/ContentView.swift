@@ -8,6 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    //WATCH
+    //initialize program view model
+    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
+    
+    //creating another connection provider because swift is finnicky?
+    let connect = ConnectionProvider()
+    
+    @State var games : [WatchGame] = [] //initially empty
+    
+    
+    
+    
     @State var loginToggle = false
     @State var showingModal = false
     //SAVE LOGGED IN USER HERE TO PASS IT INTO USERPROFILE
@@ -63,6 +75,13 @@ struct ContentView: View {
                             GameInfoModalView()
                         }
                     }
+                }
+                .onAppear(){
+                    //FOR WATCH
+                    //connect when app loads
+                    viewModel.connectivityProvider.connect()
+                    viewModel.connectivityProvider.initFakeDetails()
+                    self.games = viewModel.connectivityProvider.games
                 }
             }
         }
