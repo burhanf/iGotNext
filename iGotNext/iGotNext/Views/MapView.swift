@@ -10,16 +10,24 @@ import MapKit
 
 struct MapView: View {
     @State var annotations:[Location] = []
-    @StateObject private var viewModel = LocationViewModel()
+    @StateObject private var locationViewModel = LocationViewModel()
+    @ObservedObject private var gameViewModel = GameViewModel()
     var body: some View {
         VStack{
-            Map(coordinateRegion: $viewModel.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: annotations)
+            Map(coordinateRegion: $locationViewModel.region, interactionModes: .all, showsUserLocation: true, userTrackingMode: nil, annotationItems: annotations)
             {item in
                 MapPin(coordinate: item.coordinate)
             }
             .accentColor(.pink)
             .onAppear{
-                viewModel.checkIfLocationServicesISEnabled()
+                locationViewModel.checkIfLocationServicesISEnabled()
+                if(annotations.isEmpty){
+                    gameViewModel.fetchData()
+                }
+            }.onChange(of: gameViewModel.games) { games in
+                for game in games{
+                    annotations.append(Location(name: game.gameType!, coordinate: game.location!))
+                }
             }
         }
     }
