@@ -33,6 +33,16 @@ struct MapView: View {
                                 .resizable()
                                 .background(Color.white).clipShape(RoundedRectangle(cornerRadius: 25,style: .continuous))
                                 .frame(width: 30, height: 30, alignment: .center)
+                        case "Volleyball":
+                            Image("volleyballicon")
+                                .resizable()
+                                .background(Color.white).clipShape(RoundedRectangle(cornerRadius: 25,style: .continuous))
+                                .frame(width: 30, height: 30, alignment: .center)
+                        case "Football":
+                            Image("footballicon")
+                                .resizable()
+                                .background(Color.white).clipShape(RoundedRectangle(cornerRadius: 25,style: .continuous))
+                                .frame(width: 30, height: 30, alignment: .center)
                         default:
                             Image("soccericon")                                .resizable()
                                 .background(Color.white).clipShape(RoundedRectangle(cornerRadius: 25,style: .continuous))
