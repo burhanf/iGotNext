@@ -11,8 +11,8 @@ struct GameView : View{
     var body : some View{
         VStack{
             //Text("Location: \(game.location?.latitude ?? defaultLocation.latitude) & \(game.location?.longitude ?? defaultLocation.longitude)")
-            Text("Game type: \(game.gameType ?? "No game type")")
-            Text("Number of spots available: \(game.numOfPlayers ?? "0") / \(game.maxPlayers ?? "0")")
+            Text("Game type: \(game.weather ?? "No weather")")
+            Text("Number of spots available: \(game.satisfactionLevel ?? "No satisfaction")")
         }
     }
 }
@@ -23,7 +23,7 @@ struct WatchGameView: View {
     
     var body: some View {
         VStack{
-            Text("Game from iPhone")
+            Text("Send game details to phone")
             
             List(games, id:\.self ){ g in
                 GameView(game: g)
@@ -33,7 +33,10 @@ struct WatchGameView: View {
         // Step 5d - initialize connection between watch and phone
         // Step 5e - request data and deserialize data from phone
         viewModel.connectivityProvider.connect()
-        self.games = viewModel.connectivityProvider.receivedGames
+        
+        viewModel.connectivityProvider.initFakeDetails()
+        
+        self.games = viewModel.connectivityProvider.games
 }
     }
 }

@@ -14,6 +14,8 @@ import SwiftUI
 struct ContentView: View {
     let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
     
+    let connect = ConnectionProvider()
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -22,6 +24,10 @@ struct ContentView: View {
                     Text("Game from iPhone")
                 }
             }
+        }
+        .onAppear(){
+            //ON WATCH SIDE, NEED TO CONNECT TO PHONE TO SEND TO IT
+            connect.connect()
         }
     }
 }

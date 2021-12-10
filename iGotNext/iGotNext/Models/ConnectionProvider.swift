@@ -90,6 +90,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
     }
     
     // step 2c - create fake details to be stored in a custom object -> ProgramObject.swift
+    //weather:String, satisfactionLevel: String
     func initFakeDetails()
     {
         
@@ -105,19 +106,19 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         games.removeAll()
         let gameObj = WatchGame()
         //TODO this needs to be passed in
-        gameObj.initWithData(gameType: "Bball", max: "14", numPlayers: "10", skill: "Beginner")
+        gameObj.initWithData(weather: "23", satisfactionLevel: "happy")
         games.append(gameObj)
     
         
         // step 6h - send data to watch.
         NSKeyedArchiver.setClassName("WatchGame", for: WatchGame.self)
         let gameData = try! NSKeyedArchiver.archivedData(withRootObject: games, requiringSecureCoding: true)
-        sendWatchMessage(gameData)
+        sendPhoneMessage(gameData)
         
     }
     
     // step 2d - implement brute force messaging method to watch
-    func sendWatchMessage(_ msgData:Data) {
+    func sendPhoneMessage(_ msgData:Data) {
         let currentTime = CFAbsoluteTimeGetCurrent()
         
         // if less than half a second has passed, bail out

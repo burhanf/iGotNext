@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    //WATCH
-    //initialize program view model
-    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
     
-    //creating another connection provider because swift is finnicky?
-    let connect = ConnectionProvider()
     
-    @State var games : [WatchGame] = [] //initially empty
+    //@State var games : [WatchGame] = [] //initially empty
     
     
     
@@ -76,13 +71,13 @@ struct ContentView: View {
                         }
                     }
                 }
-                .onAppear(){
-                    //FOR WATCH
-                    //connect when app loads
-                    viewModel.connectivityProvider.connect()
-                    viewModel.connectivityProvider.initFakeDetails()
-                    self.games = viewModel.connectivityProvider.games
-                }
+//                .onAppear(){
+//                    //FOR WATCH
+//                    //connect when app loads
+//                    viewModel.connectivityProvider.connect()
+//                    viewModel.connectivityProvider.initFakeDetails()
+//                    self.games = viewModel.connectivityProvider.games
+//                }
             }
         }
     }
