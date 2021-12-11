@@ -19,7 +19,7 @@ struct GameInformationView: View {
     //, location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), CLLocation not working
     
     var defaultLocation = CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)
-    private var defaultGame : WatchGame
+    var defaultGame = WatchGame()
     @State var games : [WatchGame] = []
     //WATCH
     //initialize program view model
