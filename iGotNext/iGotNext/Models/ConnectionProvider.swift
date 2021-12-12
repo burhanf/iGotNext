@@ -91,7 +91,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
     
     // step 2c - create fake details to be stored in a custom object -> ProgramObject.swift
     //weather:String, satisfactionLevel: String
-    func initFakeDetails()
+    func initFakeDetails(weather:String, satisfactionLevel: String)
     {
         
         
@@ -106,7 +106,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         games.removeAll()
         let gameObj = WatchGame()
         //TODO this needs to be passed in
-        gameObj.initWithData(weather: "23", satisfactionLevel: "happy")
+        gameObj.initWithData(weather: weather, satisfactionLevel: satisfactionLevel)
         games.append(gameObj)
     
         

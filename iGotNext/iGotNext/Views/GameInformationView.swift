@@ -47,7 +47,7 @@ struct GameInformationView: View {
                 List(games, id:\.self ){ g in
                     Text("Information from watch")
                     Text("\(g.weather ?? "No weather")° C")
-                    Text("Satisfaction: \(g.satisfactionLevel ?? "No satisfaction")")
+                    Text("Satisf: \(g.satisfactionLevel ?? "No satisfaction")")
                 }
                 
             }
