@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WatchGameViewModel: NSObject {
+final class WatchGameViewModel: ObservableObject {
     private(set) var connectivityProvider: ConnectionProvider
    // var textFieldValue: String = ""
     

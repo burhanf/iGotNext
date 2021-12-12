@@ -23,10 +23,11 @@ struct GameInformationView: View {
     @State var games : [WatchGame] = []
     //WATCH
     //initialize program view model
-    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
+    @ObservedObject var viewModel: WatchGameViewModel
+    //let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
     
     //creating another connection provider because swift is finnicky?
-    let connect = ConnectionProvider()
+    //let connect = ConnectionProvider()
 
     
     
@@ -43,14 +44,17 @@ struct GameInformationView: View {
             
             
             Group{
-                Text("Information from watch")
-                Text("Game type: \(games[0].weather ?? "No weather")° C")
-                Text("Number of spots available: \(games[0].satisfactionLevel ?? "No satisfaction")")
+                List(games, id:\.self ){ g in
+                    Text("Information from watch")
+                    Text("\(g.weather ?? "No weather")° C")
+                    Text("Satisfaction: \(g.satisfactionLevel ?? "No satisfaction")")
+                }
+                
             }
             
         }
-        .navigationTitle("\(passedInGame.gameType ?? "No game")")
         .onAppear(){
+            print("PHONE ON APPEAR")
             defaultGame.initWithData(weather: "No weather", satisfactionLevel: "No satisfaction")
             
             
@@ -61,6 +65,8 @@ struct GameInformationView: View {
           
           self.games = viewModel.connectivityProvider.receivedGames
         }
+        .navigationTitle("\(passedInGame.gameType ?? "No game")")
+        
         
     }
 }

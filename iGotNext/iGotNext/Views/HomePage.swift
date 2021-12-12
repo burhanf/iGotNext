@@ -11,7 +11,7 @@ import FirebaseCore
 import FirebaseFirestore
 
 struct HomePage: View {
-        
+    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
     @ObservedObject private var gameViewModel = GameViewModel()
     
     @State private var searchVal = ""
@@ -70,7 +70,7 @@ struct HomePage: View {
                             ForEach(0..<gameViewModel.games.count) { i in
                                 
                             ZStack{
-                                NavigationLink(destination: GameInformationView(passedInGame: $gameViewModel.games[i] )){
+                                NavigationLink(destination: GameInformationView(passedInGame: $gameViewModel.games[i], viewModel: viewModel)){
                                         
                                         ZStack{
                                         Image(gameViewModel.games[i].gameType?.lowercased() ?? "noimage")

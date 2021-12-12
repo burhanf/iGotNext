@@ -11,14 +11,14 @@ struct GameView : View{
     var body : some View{
         VStack{
             //Text("Location: \(game.location?.latitude ?? defaultLocation.latitude) & \(game.location?.longitude ?? defaultLocation.longitude)")
-            Text("Game type: \(game.weather ?? "No weather")")
-            Text("Number of spots available: \(game.satisfactionLevel ?? "No satisfaction")")
+            Text("\(game.weather ?? "No weather")")
+            Text("\(game.satisfactionLevel ?? "No satisfaction")")
         }
     }
 }
 
 struct WatchGameView: View {
-    let viewModel : WatchGameViewModel
+    @ObservedObject var viewModel : WatchGameViewModel
     @State var games : [WatchGame] = []
     
     var body: some View {
@@ -30,6 +30,7 @@ struct WatchGameView: View {
             }
 
     } .onAppear(){
+        print("WATCH ON APPEAR")
         // Step 5d - initialize connection between watch and phone
         // Step 5e - request data and deserialize data from phone
         viewModel.connectivityProvider.connect()
