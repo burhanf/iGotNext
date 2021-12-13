@@ -11,11 +11,15 @@ import MapKit
 import Firebase
 //Reference: https://www.youtube.com/watch?v=f6u3AnOKZd0
 class UserViewModel: ObservableObject {
-    
+    let auth = Auth.auth()
     @Published var users = [User]()
-    
+    @Published var signupSuccessful = false
+    @Published var signinSuccessful = false
+    @Published var signedIn = false
     private let db = Firebase.Firestore.firestore()
-    
+    var isSignedIn: Bool {
+        return signedIn
+    }
     func fetchData(){
         
         db.collection("User").addSnapshotListener { (querySnapshot, err) in
@@ -31,7 +35,6 @@ class UserViewModel: ObservableObject {
                 let userFirstName = data["firstName"]  as? String ?? ""
                 let userLastName = data["lastName"]  as? String ?? ""
                 let userSkillLevel = data["skillLevel"]  as? String ?? ""
-                
                 //create a user object from the attributes retrieved in firestore
                 let fsUser = User(firstName: userFirstName, lastName: userLastName, age: userAge, skill: userSkillLevel)
                 
@@ -39,19 +42,6 @@ class UserViewModel: ObservableObject {
                 
                 return fsUser
             }
-        }
-    }
-    func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
-        //validations
-        var user = Auth.auth().createUser(withEmail: email, password: password){ (result:AuthDataResult?, error:Error?) in
-            if((error == nil)){
-            self.db.collection("User").document((result?.user.uid)!).setData([
-                "firstName":firstName,
-                "lastName":lastName,
-                "skillLevel":skillLevel,
-                "age": age
-            ])
-        }
         }
     }
     //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
@@ -67,6 +57,4 @@ class UserViewModel: ObservableObject {
             }
         }
     }
-    
-    
 }

@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    //@State var games : [WatchGame] = [] //initially empty
+    
+    
+    
+    
     @State var loginToggle = false
     @State var showingModal = false
     //SAVE LOGGED IN USER HERE TO PASS IT INTO USERPROFILE
@@ -64,6 +71,13 @@ struct ContentView: View {
                         }
                     }
                 }
+//                .onAppear(){
+//                    //FOR WATCH
+//                    //connect when app loads
+//                    viewModel.connectivityProvider.connect()
+//                    viewModel.connectivityProvider.initFakeDetails()
+//                    self.games = viewModel.connectivityProvider.games
+//                }
             }
         }
     }

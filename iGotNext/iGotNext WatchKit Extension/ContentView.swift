@@ -7,15 +7,28 @@
 
 import SwiftUI
 
+
+
+
+
 struct ContentView: View {
+    let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
+    
+    let connect = ConnectionProvider()
+    
     var body: some View {
-        Text("Hello, World!")
-            .padding()
+        NavigationView{
+            VStack{
+                Text("Watch from iPhone")
+                NavigationLink(destination: WatchGameView(viewModel: viewModel)){
+                    Text("Game from iPhone")
+                }
+            }
+        }
+        .onAppear(){
+            //ON WATCH SIDE, NEED TO CONNECT TO PHONE TO SEND TO IT
+            connect.connect()
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

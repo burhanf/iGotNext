@@ -8,6 +8,8 @@
 import SwiftUI
 import MapKit
 
+//WATCH WILL BE CONNECTED WHEN THE GAME IS VIEWED
+
 //Game instance would be passed into the view
 struct GameInformationView: View {
     //private var passedInGame = Game(gameType: "Basketball", startTime : 1.50, endTime: 1.60)
@@ -17,6 +19,17 @@ struct GameInformationView: View {
     //, location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), CLLocation not working
     
     var defaultLocation = CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)
+    var defaultGame = WatchGame()
+    @State var games : [WatchGame] = []
+    //WATCH
+    //initialize program view model
+    @ObservedObject var viewModel: WatchGameViewModel
+    //let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
+    
+    //creating another connection provider because swift is finnicky?
+    //let connect = ConnectionProvider()
+
+    
     
     
     var body: some View {
@@ -29,7 +42,32 @@ struct GameInformationView: View {
             Text("End time: \(passedInGame.endTime ?? Date())")
             Text("Number of spots available: \(passedInGame.numOfPlayers ?? 0) / \(passedInGame.maxPlayers ?? 0)")
             
-        }.navigationTitle("\(passedInGame.gameType ?? "No game")")
+            
+            Group{
+                List(games, id:\.self ){ g in
+                    Text("Information from watch")
+                    Text("\(g.weather ?? "No weather")° C")
+                    Text("Satisf: \(g.satisfactionLevel ?? "No satisfaction")")
+                }
+                
+            }
+            
+        }
+        .onAppear(){
+            print("PHONE ON APPEAR")
+            defaultGame.initWithData(weather: "No weather", satisfactionLevel: "No satisfaction")
+            
+            
+          //PHONE SIDE, WILL RECIEVE FROM WATCH
+          viewModel.connectivityProvider.connect()
+          
+          
+          
+          self.games = viewModel.connectivityProvider.receivedGames
+        }
+        .navigationTitle("\(passedInGame.gameType ?? "No game")")
+        
+        
     }
 }
 
