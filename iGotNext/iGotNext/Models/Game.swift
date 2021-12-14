@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Foundation
 
-class Game: NSObject{
+class Game: NSObject,Identifiable{
 //    public static var supportsSecureCoding: Bool = true
     
     let id = UUID()
