@@ -3,7 +3,7 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-12-04.
-//
+//This class represents a user that has personal information and is saved to the db, the user signs into the app to view their own datas
 
 import UIKit
 

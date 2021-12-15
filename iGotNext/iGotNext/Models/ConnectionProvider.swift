@@ -3,14 +3,13 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-12-07.
-//
+//This class is used to connect the Watch to the phone, the watch sends data to the phone. The data being sent is a WatchGame objects
 
 import UIKit
 import WatchConnectivity
 import MapKit
 
-// step 2 - implement this class for watch connectivity for both
-//          phone and watch sides
+//implement this class for watch connectivity for both phone and watch sides
 class ConnectionProvider: NSObject, WCSessionDelegate {
     
     private let session: WCSession
@@ -51,17 +50,13 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        // do something
     }
 
     #if os(iOS)
-    // these methods are required for iOS but not for watchOS
     func sessionDidBecomeInactive(_ session: WCSession) {
-        // do something
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        // do something
     }
     #endif
     
@@ -72,14 +67,12 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         {
              print("gameData no reply handler")
             
-            let loadedData = message["gameData"] //result["progData"]
+            let loadedData = message["gameData"]
         
             print("gameData no reply handler")
             
-          // step 2b - deserialize the data from the watch
+          //deserialize the data from the watch
             NSKeyedUnarchiver.setClass(WatchGame.self, forClassName: "WatchGame")
-            // causes app crash because decode not linked properly error
-            // above line of code needed to prevent this crash
 
             let loadedPerson =   try! NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [WatchGame.self], from: loadedData as! Data) as? [WatchGame]
                 
@@ -89,35 +82,24 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         }
     }
     
-    // step 2c - create fake details to be stored in a custom object -> ProgramObject.swift
-    //weather:String, satisfactionLevel: String
-    func initFakeDetails(weather:String, satisfactionLevel: String)
+    //create watch game object to be sent
+    func initDetails(weather:String, satisfactionLevel: String)
     {
-        
-        
-        /*  let dateStringFormatFrom = "EEE, MMM dd, hh:mm"
-         let dateStringFormatTo = "hh:mm"
-         let dateFormatterFrom = DateFormatter()
-         let dateFormatterTo = DateFormatter()
-         dateFormatterFrom.dateFormat = dateStringFormatFrom
-         dateFormatterTo.dateFormat = dateStringFormatTo
-         */
-        
         games.removeAll()
         let gameObj = WatchGame()
-        //TODO this needs to be passed in
+        
         gameObj.initWithData(weather: weather, satisfactionLevel: satisfactionLevel)
         games.append(gameObj)
     
         
-        // step 6h - send data to watch.
+        //send data to phone
         NSKeyedArchiver.setClassName("WatchGame", for: WatchGame.self)
         let gameData = try! NSKeyedArchiver.archivedData(withRootObject: games, requiringSecureCoding: true)
         sendPhoneMessage(gameData)
         
     }
     
-    // step 2d - implement brute force messaging method to watch
+    //implement brute force messaging method to phone
     func sendPhoneMessage(_ msgData:Data) {
         let currentTime = CFAbsoluteTimeGetCurrent()
         
@@ -126,10 +108,10 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
             return
         }
         
-        // send a message to the watch if it's reachable
+        // send a message to the phone if it's reachable
         if (WCSession.default.isReachable) {
             
-            print("sendWatchMessage")
+            print("sendPhoneMessage")
             let message = ["gameData": msgData]
             WCSession.default.sendMessage(message, replyHandler: nil)
         }

@@ -3,7 +3,7 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-12-07.
-//
+//This class represents the extra game information that is sent from the Watch to the phone
 
 import UIKit
 import MapKit
@@ -20,8 +20,7 @@ class WatchGame: NSObject, ObservableObject ,NSSecureCoding {
     func initWithData(weather : String, satisfactionLevel : String) {
         self.weather = weather
         self.satisfactionLevel = satisfactionLevel
-    
-//        super.init()
+
     }
     
     public required convenience init?(coder decoder: NSCoder) {

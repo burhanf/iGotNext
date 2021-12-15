@@ -3,6 +3,7 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-12-04.
+//The purpose of this class is to connect to Firebase and retrieve a user from the database
 //
 
 

@@ -3,45 +3,42 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-11-18.
-//
+//This view is responsible for displaying the details of a game that was clicked by the user in the home screen
+//This view also connects with the Watch app and recieves the extra game information entered in the watch
 
 import SwiftUI
 import MapKit
 
-//WATCH WILL BE CONNECTED WHEN THE GAME IS VIEWED
-
 //Game instance would be passed into the view
 struct GameInformationView: View {
-    //private var passedInGame = Game(gameType: "Basketball", startTime : 1.50, endTime: 1.60)
-//    private var passedInGame = Game(gameType: "Basketball", startTime : Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), max: 12, numPlayers: 3, skill: "beginner")
     @Binding var passedInGame : Game
     
-    //, location: CLLocationCoordinate2D(latitude: 40.748440, longitude: -73.985664), CLLocation not working
-    
     var defaultLocation = CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)
-    var defaultGame = WatchGame()
+    
+    //the game information entered in the watch is recieved here
     @State var games : [WatchGame] = []
-    //WATCH
-    //initialize program view model
+    //initialize watch view model
     @ObservedObject var viewModel: WatchGameViewModel
-    //let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
-    
-    //creating another connection provider because swift is finnicky?
-    //let connect = ConnectionProvider()
-
-    
-    
     
     var body: some View {
-        VStack{
-            Image("basketball")
+        ZStack{
+            Image(passedInGame.gameType?.lowercased() ?? "noimage")
                 .resizable()
-                .frame(width: 300, height: 100, alignment: .top)
-            Text("Location: \(passedInGame.location?.latitude ?? defaultLocation.latitude) & \(passedInGame.location?.longitude ?? defaultLocation.longitude)")
-            Text("Start time: \(passedInGame.startTime ?? Date())")
-            Text("End time: \(passedInGame.endTime ?? Date())")
-            Text("Number of spots available: \(passedInGame.numOfPlayers ?? 0) / \(passedInGame.maxPlayers ?? 0)")
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.20)
+                
+        }
+        VStack{
             
+            Text("Location: \(passedInGame.location?.latitude ?? defaultLocation.latitude) & \(passedInGame.location?.longitude ?? defaultLocation.longitude)")
+                .padding(10)
+            Text("Start time: \(passedInGame.startTime ?? Date())")
+                .padding(10)
+            Text("End time: \(passedInGame.endTime ?? Date())")
+                .padding(10)
+            Text("Number of spots available: \(passedInGame.numOfPlayers ?? 0) / \(passedInGame.maxPlayers ?? 0)")
+                .padding(10)
             
             Group{
                 List(games, id:\.self ){ g in
@@ -54,14 +51,8 @@ struct GameInformationView: View {
             
         }
         .onAppear(){
-            print("PHONE ON APPEAR")
-            defaultGame.initWithData(weather: "No weather", satisfactionLevel: "No satisfaction")
-            
-            
-          //PHONE SIDE, WILL RECIEVE FROM WATCH
+          //will recieve from watch
           viewModel.connectivityProvider.connect()
-          
-          
           
           self.games = viewModel.connectivityProvider.receivedGames
         }
@@ -70,9 +61,3 @@ struct GameInformationView: View {
         
     }
 }
-
-//struct GameInformationView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GameInformationView()
-//    }
-//}
