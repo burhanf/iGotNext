@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct FriendsView: View {
+    var auth = Auth.auth().currentUser?.uid
     var body: some View {
         List {
-            Text("Friend 1")
-            Text("Friend 2")
-            Text("Friend 3")
+            
         }
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameInfoModalView: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var game: Game
     var body: some View {
         
         
@@ -30,8 +31,4 @@ struct GameInfoModalView: View {
     }
 }
 
-struct GameInfoModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameInfoModalView()
-    }
-}
+

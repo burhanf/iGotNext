@@ -68,7 +68,7 @@ struct ContentView: View {
                         }.sheet(isPresented: $showingModal, onDismiss: {
                             print("Code executed when the sheet dismisses")
                         }) {
-                            GameInfoModalView()
+//                            GameInfoModalView()
                         }
                     }
                 }
