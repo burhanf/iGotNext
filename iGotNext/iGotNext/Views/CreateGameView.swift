@@ -3,12 +3,10 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-11-18.
-//
+//This view is responsible for getting the inputs from a user to create a Game event object and saving it to the Firebase db
 
 import SwiftUI
 import MapKit
-
-//uses struct from home page
 
 struct CreateGameView: View {
     @State var selectedType = "Volleyball"
@@ -27,7 +25,7 @@ struct CreateGameView: View {
     @State var lat: Double = 0.0
     @State var long: Double = 0.0
     
-    @State var numOfPlayers: String = "0"
+    @State var numOfPlayers: String = ""
     @State var maxNum: String = ""
     @State var selectedSkill = "Advanced"
     
@@ -45,34 +43,36 @@ struct CreateGameView: View {
                     Text($0)
                 }
             }
-            
-            //date picker for start
-            DatePicker(selection: $start, in: Date()...){
-                Text("Start time:")
-            }
-            
-            //date picker for end
-            DatePicker(selection: $end, in: Date()...){
-                Text("End time:")
-            }
-            
-            TextField("Location", text: $gameLocation)
-                
-            TextField("Number of players", text: $numOfPlayers)
-                .keyboardType(.numberPad)
-            TextField("Max number of players", text: $maxNum)
-                .keyboardType(.numberPad)
-            
+            Text("Skill level:")
             Picker("Select skill level", selection: $selectedSkill){
                 ForEach(skillLevels, id: \.self){
                     Text($0)
                 }
             }
+            TextField("Location", text: $gameLocation)
+                .padding(5)
+            //date picker for start
+            DatePicker(selection: $start, in: Date()...){
+                Text("Start time:")
+            }
+    
+            //date picker for end
+            DatePicker(selection: $end, in: Date()...){
+                Text("End time:")
+            }
+        
+            TextField("Number of players", text: $numOfPlayers)
+                .keyboardType(.numberPad)
+                .padding(5)
+            TextField("Max number of players", text: $maxNum)
+                .keyboardType(.numberPad)
+                .padding(5)
+            
+            
             
             Button(action: {
+                //Find coordinates of game location from the user's input
                 findCoordinates()
-                //TODO: need to retrieve location coordinates before adding the game to db
-                
             }){
                 Text("Add game")
             }
@@ -82,16 +82,10 @@ struct CreateGameView: View {
     
     func addGameData(){
         //Reference: https://firebase.google.com/docs/firestore/manage-data/add-data#swift
-        //convert types of the text inputs to appropiate type
-//        let properLat = Double(lat)
-//        let properLong = Double(long)
-        //var properStart = Double(start) ?? 0.00
-        //var properEnd = Double(end) ?? 0.00
         
         let properNumPlayers = Int(numOfPlayers) ?? 0
         let properMax = Int(maxNum) ?? 0
-        
-        //var newGame = Game(gameType: type, startTime: Date(), endTime: Date(), loc: CLLocationCoordinate2D(latitude: properLat, longitude: properLong), max: properMax, numPlayers: properNumPlayers, skill: skill)
+    
         viewModel.addData(gameType: selectedType, startTime: start, endTime: end, lat: self.lat, long: self.long, numberOfPlayers: properNumPlayers, maxNumberOfPlayers: properMax, skillLevel: selectedSkill)
     }
     

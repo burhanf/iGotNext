@@ -3,9 +3,9 @@
 //  iGotNext
 //
 //  Created by Burhan Faquiri on 2021-11-18.
-//
+//This view is responsible for displaying the logged in user's information
 
-//TODO: add styling, get specific user
+//TODO:get logged in user, gets the first user in db for now
 
 
 import SwiftUI
