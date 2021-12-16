@@ -61,6 +61,7 @@ struct ContentView: View {
                             Text("History")
                         }
                         Button(action: {
+                            
                             self.showingModal.toggle()
                         }) {
                             Text("Show Sheet View")
