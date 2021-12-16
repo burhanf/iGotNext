@@ -8,6 +8,10 @@
 import SwiftUI
 import Firebase
 
+struct UserDto {
+    var firstName: String
+}
+
 struct FriendsView: View {
     var userId = Auth.auth().currentUser?.uid
     private let db = Firestore.firestore()
@@ -22,13 +26,14 @@ struct FriendsView: View {
     
     func fetchData(){
         
-        var user = db.collection("User").document(userId!).getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
-            }
+        let docRef = db.collection("User").document(userId!)
+        
+        docRef.getDocument(source: .cache) { (document, error) in
+          if let document = document {
+            document.data()
+          } else {
+            print("Document does not exist in cache")
+          }
         }
         
     }

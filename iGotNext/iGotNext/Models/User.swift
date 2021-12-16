@@ -13,7 +13,6 @@ class User: NSObject {
         var lastName : String?
         var age : Int?
         var skillLevel : String?
-    
     //needs a list of games played for history
     
     //ctor
@@ -22,7 +21,6 @@ class User: NSObject {
         self.lastName = lastName
         self.age = age
         self.skillLevel = skill
-    
         super.init()
     }
 }
