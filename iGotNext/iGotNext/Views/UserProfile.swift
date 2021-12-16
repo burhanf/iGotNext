@@ -9,9 +9,17 @@
 
 
 import SwiftUI
+import Firebase
 
 struct UserProfile: View {
-    var sampleUser = User(firstName: "Burhan", lastName: "Faquiri", age: 21, skill: "Beginner")
+    var userId = Auth.auth().currentUser?.uid
+    private let db = Firestore.firestore()
+    
+//    @State var loggedInUser = User(firstName: "Default", lastName: "Default", age: 99, skill: "Default")
+    @State var firstName = "Default"
+    @State var lastName = "Default"
+    @State var skill = "Default"
+    @State var age = 99
     
     //instance of viewmodel
     @ObservedObject private var userViewModel = UserViewModel()
@@ -19,29 +27,50 @@ struct UserProfile: View {
     
     var body: some View {
         VStack{
-            if(userViewModel.users.count == 0){
-                Text("Loading...")
-            }
-            else{
             Image("basketball")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width: 150, height: 150, alignment: .center)
-            
-            Text("\(userViewModel.users[0].firstName ?? "No first name") \(userViewModel.users[0].lastName ?? "No last name")")
+            if(firstName == "Default"){
+                Text("Loading...").onAppear(){
+                }
+            }
+            else{
+                Text("\(firstName ?? "No first name") \(lastName ?? "No last name")")
                 .font(.headline)
                 .bold()
-            Text("\(userViewModel.users[0].age ?? 0) years old")
+            Text("\(age ?? 0) years old")
                 .font(.subheadline)
-            Text("Skill level: \(userViewModel.users[0].skillLevel ?? "Beginner")")
+            Text("Skill level: \(skill ?? "Beginner")")
                 .font(.subheadline)
                 .foregroundColor(.yellow)
             }
-        }
+            }
         .onAppear(){
-            self.userViewModel.fetchData()
+            fetchData()
         }
     }
+    
+    func fetchData(){
+        //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
+            let docRef = db.collection("User").document(userId!)
+            
+            docRef.getDocument(source: .cache) { (document, error) in
+              if let document = document {
+                let dataDescription = document.data()
+                print(dataDescription?["firstName"] as! String)
+                
+                firstName = dataDescription?["firstName"] as! String
+                lastName = dataDescription?["lastName"] as! String
+                skill = dataDescription?["skillLevel"] as! String
+                age = dataDescription?["age"] as! Int
+                
+              } else {
+                print("Document does not exist in cache")
+              }
+            }
+            
+        }
 }
 
 struct UserProfile_Previews: PreviewProvider {

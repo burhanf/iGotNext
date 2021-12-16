@@ -7,8 +7,12 @@
 
 import SwiftUI
 import MapKit
+import Firebase
 
 struct CreateGameView: View {
+    var userId = Auth.auth().currentUser?.uid
+    private let db = Firestore.firestore()
+    
     @State var selectedType = "Volleyball"
     @State var start: Date = Date()
     @State var end: Date = Date()
@@ -34,6 +38,13 @@ struct CreateGameView: View {
     
     //instance of viewmodel
     @ObservedObject private var viewModel = GameViewModel()
+    
+    //instance of viewmodel
+    @ObservedObject private var userViewModel = UserViewModel()
+    
+    //add a game to 
+    var auth = Auth.auth().currentUser?.uid
+    var loggedInUser = User(firstName: "Default", lastName: "Default", age: 99, skill: "Default")
     
     var body: some View {
         VStack{
@@ -85,8 +96,9 @@ struct CreateGameView: View {
         
         let properNumPlayers = Int(numOfPlayers) ?? 0
         let properMax = Int(maxNum) ?? 0
-    
-        viewModel.addData(gameType: selectedType, startTime: start, endTime: end, lat: self.lat, long: self.long, numberOfPlayers: properNumPlayers, maxNumberOfPlayers: properMax, skillLevel: selectedSkill)
+        
+        //game needs to be added to the logged in user's list of games too
+            viewModel.addData(gameType: selectedType, startTime: start, endTime: end, lat: self.lat, long: self.long, numberOfPlayers: properNumPlayers, maxNumberOfPlayers: properMax, skillLevel: selectedSkill, creator: userId ?? "No user id")
     }
     
     func findCoordinates(){
