@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct WatchGameView: View {
+    //watch view model object
     @ObservedObject var viewModel : WatchGameViewModel
     
+    //state vars to hold the user entered information
     @State var weather = ""
     @State var satisfaction = ""
     
@@ -34,6 +36,7 @@ struct WatchGameView: View {
 }
     }
     
+    //function to send the data over to the phone
     func sendData(){
         viewModel.connectivityProvider.initDetails(weather: weather, satisfactionLevel: satisfaction)
     }
