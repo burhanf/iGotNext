@@ -8,17 +8,34 @@
 import SwiftUI
 import Firebase
 
+struct UserDto {
+    var firstName: String
+}
+
 struct FriendsView: View {
-    var auth = Auth.auth().currentUser?.uid
+    var userId = Auth.auth().currentUser?.uid
+    private let db = Firestore.firestore()
+    
     var body: some View {
         List {
             
+        }.onAppear{
+            fetchData()
         }
+    }
+    
+    func fetchData(){
+        
+        let docRef = db.collection("User").document(userId!)
+        
+        docRef.getDocument(source: .cache) { (document, error) in
+          if let document = document {
+            document.data()
+          } else {
+            print("Document does not exist in cache")
+          }
+        }
+        
     }
 }
 
-struct FriendsView_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendsView()
-    }
-}
