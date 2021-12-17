@@ -5,17 +5,17 @@
 //  Created by Burhan Faquiri on 2021-11-18.
 //This view is responsible for displaying the logged in user's information
 
-//TODO:get logged in user, gets the first user in db for now
-
 
 import SwiftUI
 import Firebase
 
 struct UserProfile: View {
+    //auth object for the signed in user
     var userId = Auth.auth().currentUser?.uid
+    //firebase database
     private let db = Firestore.firestore()
     
-//    @State var loggedInUser = User(firstName: "Default", lastName: "Default", age: 99, skill: "Default")
+    //state vars that will store the user information and display on screen
     @State var firstName = "Default"
     @State var lastName = "Default"
     @State var skill = "Default"
@@ -26,11 +26,19 @@ struct UserProfile: View {
     
     
     var body: some View {
+        ZStack{
+            Image("bg")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.10)
+        
         VStack{
-            Image("basketball")
+            Image("user")
                 .resizable()
                 .clipShape(Circle())
-                .frame(width: 150, height: 150, alignment: .center)
+                .frame(width: 200, height: 200, alignment: .center)
+                .padding(10)
             if(firstName == "Default"){
                 Text("Loading...").onAppear(){
                 }
@@ -39,18 +47,23 @@ struct UserProfile: View {
                 Text("\(firstName ?? "No first name") \(lastName ?? "No last name")")
                 .font(.headline)
                 .bold()
+                    .padding(20)
             Text("\(age ?? 0) years old")
                 .font(.subheadline)
+                .padding(5)
             Text("Skill level: \(skill ?? "Beginner")")
                 .font(.subheadline)
-                .foregroundColor(.yellow)
+                .foregroundColor(.red)
+                .padding(5)
             }
             }
         .onAppear(){
             fetchData()
         }
+        }
     }
     
+    //function that makes a request to the db to get the logged in user and assigns the detail to state vars
     func fetchData(){
         //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
             let docRef = db.collection("User").document(userId!)

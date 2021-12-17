@@ -11,12 +11,18 @@ import MapKit
 
 //implement this class for watch connectivity for both phone and watch sides
 class ConnectionProvider: NSObject, WCSessionDelegate {
-    
+    //WCsession
     private let session: WCSession
+    
+    //will hold a list of games
     var games : [WatchGame] = []
+    //holds the recieved games that were sent
     var receivedGames : [WatchGame] = []
+    
+    //time of last message
     var lastMessage: CFAbsoluteTime = 0
     
+    //constructor, initalize the watch session
     init(session: WCSession = .default) {
         self.session = session
         super.init()
@@ -34,12 +40,14 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         self.connect()
     }
     
+    //function that sends data to the other device (which is the phone)
     func send(message: [String:Any]) -> Void {
         session.sendMessage(message, replyHandler: nil) { (error) in
             print(error.localizedDescription)
         }
     }
     
+    //function that connects the devices
     func connect() {
             guard WCSession.isSupported() else {
                 print("WCSession is not supported")
@@ -49,6 +57,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
             session.activate()
         }
     
+    //required methods for watch connection
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
 
@@ -60,6 +69,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
     }
     #endif
     
+    //function that decodes the data sent
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("entered didReceiveMessage with no reply handler")
         
@@ -82,7 +92,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         }
     }
     
-    //create watch game object to be sent
+    //function to create watch game object to be sent
     func initDetails(weather:String, satisfactionLevel: String)
     {
         games.removeAll()
@@ -99,7 +109,7 @@ class ConnectionProvider: NSObject, WCSessionDelegate {
         
     }
     
-    //implement brute force messaging method to phone
+    //function to implement brute force messaging method to phone
     func sendPhoneMessage(_ msgData:Data) {
         let currentTime = CFAbsoluteTimeGetCurrent()
         

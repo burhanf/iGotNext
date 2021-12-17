@@ -12,15 +12,21 @@ import MapKit
 import Firebase
 //Reference: https://www.youtube.com/watch?v=f6u3AnOKZd0
 class UserViewModel: ObservableObject {
+    //auth object to get the logged in user
     let auth = Auth.auth()
+    //list of users in db
     @Published var users = [User]()
+    //boolean checks to see if sign up was successfull or not
     @Published var signupSuccessful = false
     @Published var signinSuccessful = false
     @Published var signedIn = false
+    
+    //firebase database itself
     private let db = Firebase.Firestore.firestore()
     var isSignedIn: Bool {
         return signedIn
     }
+    //function that connects to firebase api and makes a query to get the users
     func fetchData(){
         
         db.collection("User").addSnapshotListener { (querySnapshot, err) in
@@ -42,19 +48,6 @@ class UserViewModel: ObservableObject {
                 print(self.users.count)
                 
                 return fsUser
-            }
-        }
-    }
-    //Reference: https://firebase.google.com/docs/firestore/query-data/get-data
-    func getUserById(idToSearch: String){
-        let docRef = db.collection("User").document(idToSearch)
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
             }
         }
     }

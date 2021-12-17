@@ -8,19 +8,20 @@
 import UIKit
 
 class User: NSObject {
-        let id = UUID()
-        var firstName : String?
-        var lastName : String?
-        var age : Int?
-        var skillLevel : String?
-    //needs a list of games played for history
+    //variables a user will have
+    let id = UUID()
+    var firstName : String? //first name of a user
+    var lastName : String? //last name of a user
+    var age : Int? //age name of a user
+    var skillLevel : String? //chosen skill level to represent the user
     
-    //ctor
+    //constructor that will take parameters to create a full user object
     init(firstName : String, lastName : String, age : Int, skill : String) {
         self.firstName = firstName
         self.lastName = lastName
         self.age = age
         self.skillLevel = skill
+    
         super.init()
     }
 }
