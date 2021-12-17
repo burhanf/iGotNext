@@ -15,7 +15,6 @@
 		4CA379F4275C557B008D41AC /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F3275C557B008D41AC /* ReviewViewModel.swift */; };
 		4CA379F6275C5AE4008D41AC /* CreateReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F5275C5AE4008D41AC /* CreateReviewView.swift */; };
 		5E763559274ACBA500CC7435 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763558274ACBA500CC7435 /* LocationViewModel.swift */; };
-		5E76355B274ACBB800CC7435 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76355A274ACBB800CC7435 /* Location.swift */; };
 		5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E76355F274ACBFB00CC7435 /* MapKit.framework */; };
 		5E763562274ACC0200CC7435 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E763561274ACC0200CC7435 /* CoreLocation.framework */; };
 		5E763565274ACC8400CC7435 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E763564274ACC8400CC7435 /* Login.swift */; };
@@ -117,7 +116,6 @@
 		4CA379F3275C557B008D41AC /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
 		4CA379F5275C5AE4008D41AC /* CreateReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateReviewView.swift; sourceTree = "<group>"; };
 		5E763558274ACBA500CC7435 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
-		5E76355A274ACBB800CC7435 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		5E76355F274ACBFB00CC7435 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		5E763561274ACC0200CC7435 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		5E763564274ACC8400CC7435 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -196,6 +194,7 @@
 				4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */,
 				A587C51C275BDC0F009BD19E /* UserViewModel.swift */,
 				4CA379F3275C557B008D41AC /* ReviewViewModel.swift */,
+				5E763558274ACBA500CC7435 /* LocationViewModel.swift */,
 				A5027E532760001B008A0937 /* WatchGameViewModel.swift */,
 			);
 			path = ViewModels;
@@ -204,8 +203,6 @@
 		5E763557274ACB6E00CC7435 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5E763558274ACBA500CC7435 /* LocationViewModel.swift */,
-				5E76355A274ACBB800CC7435 /* Location.swift */,
 				4641DACD2751F47700FCFBF7 /* Game.swift */,
 				A587C517275BD725009BD19E /* User.swift */,
 				4CA379F1275C54CE008D41AC /* Review.swift */,
@@ -490,7 +487,6 @@
 				5E763579274ACDA000CC7435 /* GameInfoModalView.swift in Sources */,
 				5E763577274ACD8E00CC7435 /* HistoryView.swift in Sources */,
 				A5027E4F275FFEC5008A0937 /* ConnectionProvider.swift in Sources */,
-				5E76355B274ACBB800CC7435 /* Location.swift in Sources */,
 				A587C51D275BDC0F009BD19E /* UserViewModel.swift in Sources */,
 				5E763567274ACCA000CC7435 /* Signup.swift in Sources */,
 				5E763573274ACD6700CC7435 /* ReviewsView.swift in Sources */,
