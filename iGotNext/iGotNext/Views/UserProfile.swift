@@ -27,14 +27,14 @@ struct UserProfile: View {
     
     var body: some View {
         ZStack{
-            Image("basketball")
+            Image("bg")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.10)
         
         VStack{
-            Image("basketball")
+            Image("user")
                 .resizable()
                 .clipShape(Circle())
                 .frame(width: 200, height: 200, alignment: .center)
