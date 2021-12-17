@@ -45,6 +45,9 @@ struct ContentView: View {
                     NavigationLink(destination: CreateGameView()){
                         Text("Create Game")
                     }
+                    NavigationLink(destination: CreateReviewView()){
+                        Text("Create Review")
+                    }
                     // swift being swift
                     Group {
                         //                        NavigationLink(destination: GameInformationView()){

@@ -68,6 +68,26 @@ class ReviewViewModel: ObservableObject {
 //                }
         }
 
+    
+    
+    func addData(reviewContent : String, user : String, rating: String){
+        //add a new document to the Game collection
+        var referenceOfNewDocument: DocumentReference? = nil
+        //Reference: https://firebase.google.com/docs/reference/swift/firebasefirestore/api/reference/Classes/GeoPoint
+        referenceOfNewDocument = db.collection("Review").addDocument(data: [
+            "reviewContent" : String(reviewContent),
+            "user" : String(user),
+            "rating" : String(rating)
+            
+        ]){ err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(referenceOfNewDocument!.documentID)")
+            }
+            
+        }
+    }
 
 
 //        db.collection("Review").whereField("user", isEqualTo: "EJ1zfM5i7pXpTv1eSUdxkCSd7G82").addSnapshotListener { (querySnapshot, err) in
