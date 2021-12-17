@@ -16,10 +16,19 @@ struct HistoryView: View {
         var game: Dictionary<String, String>
         var body: some View {
             VStack {
-                Text("Game Type: \(game["GameType"] ?? "")")
-                Text("Skill Level: \(game["SkillLevel"] ?? "")")
-                Text("Max: \(game["MaxPlayers"] ?? "")")
+                Text("Game Type: \(game["GameType"] ?? "")").font(.headline)
+                    .bold()
+                        .padding(20)
+                Text("Skill Level: \(game["SkillLevel"] ?? "")").font(.headline)
+                    .bold()
+                        .padding(20)
+                Text("Max: \(game["MaxPlayers"] ?? "")").font(.headline)
+                    .bold()
+                        .padding(20)
                 Image(game["GameType"]?.lowercased() ?? "")
+                    .resizable()
+                    .frame(width: 200, height: 200, alignment: .center)
+                    .padding(10)
             }
         }
     }

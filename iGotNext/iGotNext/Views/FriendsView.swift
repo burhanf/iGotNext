@@ -15,7 +15,9 @@ struct FriendsView: View {
     private let db = Firestore.firestore()
     
     var body: some View {
-        Text("Best Friend: \(bestFriend)").onAppear{
+        Text("Best Friend: \(bestFriend)").font(.headline)
+            .bold()
+                .padding(20).onAppear{
             fetchData()
         }
     }
