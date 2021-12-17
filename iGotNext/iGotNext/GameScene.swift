@@ -37,12 +37,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func random(min:CGFloat, max: CGFloat) -> CGFloat{
         return random() * (max-min) + min
     }
+    // spawn icons when the metho is invoced
     func addBaddy(){
+        // append a random image to the sprite from the list of image strings
         index = Int.random(in: 1..<5)
         let baddy = SKSpriteNode(imageNamed: images[index])
         baddy.zRotation = -9
         baddy.xScale = baddy.xScale * -1
         baddy.size = CGSize(width: 30, height: 30)
+        // randomize a spawn location
         let actualX = random(min: baddy.size.width/2, max: size.width-baddy.size.width/2)
         baddy.position = CGPoint(x: actualX, y:size.width*2 + baddy.size.height/2)
         

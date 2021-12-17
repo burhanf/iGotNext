@@ -14,6 +14,7 @@ struct Signup: View {
     
     @State var email = ""
     @State var password = ""
+    // accept user credentials
     var auth = Auth.auth()
     private let db = Firebase.Firestore.firestore()
     @State var age = ""
@@ -26,6 +27,7 @@ struct Signup: View {
     var body: some View {
         NavigationView{
             VStack{
+                // create inputs to receive the data from the user
                 TextField("Email",text: $email).autocapitalization(.none).padding()
                 SecureField("Password",text: $password).textContentType(.password).padding()
                 SecureField("Confirm Password",text: $confirmPassword).textContentType(.password).padding()
@@ -50,6 +52,7 @@ struct Signup: View {
     }
     func createAccount(email: String, password: String,age: Int, firstName: String, lastName: String, skillLevel: String){
         //validations
+        // upon creation, login to the newly created user and navigate to the homepage
         var user = try Auth.auth().createUser(withEmail: email, password: password){ result, error in
             guard result != nil, error == nil else{
                 navigate = false

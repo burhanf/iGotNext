@@ -19,9 +19,11 @@ struct Login: View {
     var body: some View {
         NavigationView{
             VStack{
+                // Create the text fields
                 TextField("Email",text: $email).autocapitalization(.none).padding()
                 SecureField("Password",text: $password).padding()
                 Spacer()
+                
                 NavigationLink(destination: HomePage(), isActive: $navigate){
                     Button("Sign in"){
                         signIn(email: email, password: password)
@@ -31,6 +33,7 @@ struct Login: View {
         }
     }
     func signIn(email: String, password: String){
+        // Only navigate to the homepage if the login was successful
         auth.signIn(withEmail: email,password: password) { result, error in
             guard result != nil, error == nil else{
                 navigate = false
