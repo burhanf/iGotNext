@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		306A7E7F276BFC4A00BBB120 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306A7E7E276BFC4A00BBB120 /* GameScene.swift */; };
+		306A7E81276BFC6600BBB120 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306A7E80276BFC6600BBB120 /* SpriteKit.framework */; };
 		4641DAC92751EFC700FCFBF7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */; };
 		4641DACE2751F47700FCFBF7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4641DACD2751F47700FCFBF7 /* Game.swift */; };
 		4CA379F2275C54CE008D41AC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA379F1275C54CE008D41AC /* Review.swift */; };
@@ -107,6 +109,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		306A7E7E276BFC4A00BBB120 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		306A7E80276BFC6600BBB120 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 		4641DAC82751EFC700FCFBF7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		4641DACD2751F47700FCFBF7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		4CA379F1275C54CE008D41AC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			files = (
 				606859DF274AD6510060A34D /* FirebasePerformance in Frameworks */,
 				606859CF274AD6510060A34D /* FirebaseMessaging in Frameworks */,
+				306A7E81276BFC6600BBB120 /* SpriteKit.framework in Frameworks */,
 				5E763562274ACC0200CC7435 /* CoreLocation.framework in Frameworks */,
 				606859D5274AD6510060A34D /* FirebaseAnalytics in Frameworks */,
 				5E763560274ACBFB00CC7435 /* MapKit.framework in Frameworks */,
@@ -213,6 +218,7 @@
 		5E76355E274ACBFB00CC7435 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				306A7E80276BFC6600BBB120 /* SpriteKit.framework */,
 				5E763561274ACC0200CC7435 /* CoreLocation.framework */,
 				5E76355F274ACBFB00CC7435 /* MapKit.framework */,
 			);
@@ -263,6 +269,7 @@
 		A5B950E4274AC94D0041FD1C /* iGotNext */ = {
 			isa = PBXGroup;
 			children = (
+				306A7E7E276BFC4A00BBB120 /* GameScene.swift */,
 				4641DAC72751EF8500FCFBF7 /* ViewModels */,
 				606859C0274AD1A10060A34D /* GoogleService-Info.plist */,
 				5E763563274ACC7500CC7435 /* Views */,
@@ -472,6 +479,7 @@
 				5E763571274ACD2300CC7435 /* GameInformationView.swift in Sources */,
 				5E76356F274ACD1000CC7435 /* CreateGameView.swift in Sources */,
 				5E763565274ACC8400CC7435 /* Login.swift in Sources */,
+				306A7E7F276BFC4A00BBB120 /* GameScene.swift in Sources */,
 				5E76356D274ACCFD00CC7435 /* HomePage.swift in Sources */,
 				A5B950E6274AC94D0041FD1C /* AppDelegate.swift in Sources */,
 				A5027E542760001B008A0937 /* WatchGameViewModel.swift in Sources */,
