@@ -13,6 +13,7 @@ final class LocationViewModel: NSObject,ObservableObject,CLLocationManagerDelega
         willSet { objectWillChange.send() }
     }
     var locationManager: CLLocationManager?
+    // if permissions were granted, obtain the user's location
     func checkIfLocationServicesISEnabled(){
         if CLLocationManager.locationServicesEnabled(){
             locationManager = CLLocationManager()
@@ -22,6 +23,7 @@ final class LocationViewModel: NSObject,ObservableObject,CLLocationManagerDelega
             print("show an alert")
         }
     }
+    // verifies whether or not the user has granted the location permissions
     private func checkLocationAuthorization(){
         guard let locationManager = locationManager else{ return }
         switch locationManager.authorizationStatus {
@@ -38,6 +40,7 @@ final class LocationViewModel: NSObject,ObservableObject,CLLocationManagerDelega
             break
         }
     }
+    // watches whether or not the user's location permissions have changed
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
     }
