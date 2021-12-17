@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    //vars to create instance of watch view model and connectivity provider
     let viewModel = WatchGameViewModel(connectivityProvider: ConnectionProvider())
     
     let connect = ConnectionProvider()

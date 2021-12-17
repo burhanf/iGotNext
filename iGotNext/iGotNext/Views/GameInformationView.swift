@@ -11,12 +11,15 @@ import MapKit
 
 //Game instance would be passed into the view
 struct GameInformationView: View {
+    //instance of a game object
     @Binding var passedInGame : Game
     
+    //default location object incase it is null
     var defaultLocation = CLLocationCoordinate2D(latitude: 0.00, longitude: 0.00)
     
     //the game information entered in the watch is recieved here
     @State var games : [WatchGame] = []
+    
     //initialize watch view model
     @ObservedObject var viewModel: WatchGameViewModel
     
@@ -42,9 +45,8 @@ struct GameInformationView: View {
             
             Group{
                 List(games, id:\.self ){ g in
-                    Text("Information from watch")
                     Text("\(g.weather ?? "No weather")° C")
-                    Text("Satisf: \(g.satisfactionLevel ?? "No satisfaction")")
+                    Text("Enjoyment: \(g.satisfactionLevel ?? "No satisfaction")")
                 }
                 
             }

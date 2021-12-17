@@ -7,18 +7,18 @@
 
 import SwiftUI
 import MapKit
+import Firebase
 
 struct CreateGameView: View {
+    //auth object for the signed in user
+    var userId = Auth.auth().currentUser?.uid
+    //firebase database
+    private let db = Firestore.firestore()
+    
+    //state vars to hold the user input and send to the db
     @State var selectedType = "Volleyball"
     @State var start: Date = Date()
     @State var end: Date = Date()
-    
-    //state var for dob date picker
-    var dateFormatter : DateFormatter{
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter
-    }
     
     @State var gameLocation : String = ""
     
@@ -29,11 +29,22 @@ struct CreateGameView: View {
     @State var maxNum: String = ""
     @State var selectedSkill = "Advanced"
     
+    //options for pickers
     var gameTypes = ["Soccer", "Basketball", "Volleyball", "Football", "Tennis"]
     var skillLevels = ["Beginner", "Intermediate", "Advanced", "Expert"]
     
+    //state var for dob date picker
+    var dateFormatter : DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
     //instance of viewmodel
     @ObservedObject private var viewModel = GameViewModel()
+    
+    //instance of viewmodel
+    @ObservedObject private var userViewModel = UserViewModel()
     
     var body: some View {
         VStack{
@@ -80,15 +91,17 @@ struct CreateGameView: View {
         }.navigationTitle("Create a game")
     }
     
+    //function that will add the data entered by the user to the firebase db
     func addGameData(){
         //Reference: https://firebase.google.com/docs/firestore/manage-data/add-data#swift
         
         let properNumPlayers = Int(numOfPlayers) ?? 0
         let properMax = Int(maxNum) ?? 0
-    
-        viewModel.addData(gameType: selectedType, startTime: start, endTime: end, lat: self.lat, long: self.long, numberOfPlayers: properNumPlayers, maxNumberOfPlayers: properMax, skillLevel: selectedSkill)
+        
+            viewModel.addData(gameType: selectedType, startTime: start, endTime: end, lat: self.lat, long: self.long, numberOfPlayers: properNumPlayers, maxNumberOfPlayers: properMax, skillLevel: selectedSkill, creator: userId ?? "No user id")
     }
     
+    //function to get the lat and long of a user entered location, uses Geocoder
     func findCoordinates(){
         //use geolocation to find the coordinates of the location
         let geocoder = CLGeocoder()

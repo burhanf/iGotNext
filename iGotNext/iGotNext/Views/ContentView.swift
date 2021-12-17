@@ -63,16 +63,7 @@ struct ContentView: View {
                         NavigationLink(destination: HistoryView()){
                             Text("History")
                         }
-                        Button(action: {
-                            
-                            self.showingModal.toggle()
-                        }) {
-                            Text("Show Sheet View")
-                        }.sheet(isPresented: $showingModal, onDismiss: {
-                            print("Code executed when the sheet dismisses")
-                        }) {
-//                            GameInfoModalView()
-                        }
+                        
                     }
                 }
 //                .onAppear(){

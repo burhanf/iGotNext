@@ -9,8 +9,10 @@
 import UIKit
 
 final class WatchGameViewModel: ObservableObject {
+    //connectivity provider object
     private(set) var connectivityProvider: ConnectionProvider
    
+    //constructor that will instantiate and connect the watch providers
     init(connectivityProvider: ConnectionProvider) {
         self.connectivityProvider = connectivityProvider
         self.connectivityProvider.connect()

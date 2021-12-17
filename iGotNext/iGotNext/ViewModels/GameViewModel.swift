@@ -63,7 +63,7 @@ class GameViewModel: ObservableObject {
         }
     
     //Reference: https://firebase.google.com/docs/firestore/manage-data/add-data#swift
-    func addData(gameType : String, startTime : Date, endTime : Date, lat : Double, long : Double, numberOfPlayers : Int, maxNumberOfPlayers : Int, skillLevel : String){
+    func addData(gameType : String, startTime : Date, endTime : Date, lat : Double, long : Double, numberOfPlayers : Int, maxNumberOfPlayers : Int, skillLevel : String, creator: String){
         //add a new document to the Game collection
         var referenceOfNewDocument: DocumentReference? = nil
         //Reference: https://firebase.google.com/docs/reference/swift/firebasefirestore/api/reference/Classes/GeoPoint
@@ -74,7 +74,8 @@ class GameViewModel: ObservableObject {
             "Location" : GeoPoint(latitude: lat, longitude: long),
             "MaxPlayers" : String(maxNumberOfPlayers),
             "NumberOfPlayers" : String(numberOfPlayers),
-            "SkillLevel" : skillLevel
+            "SkillLevel" : skillLevel,
+            "Creator": creator
             
         ]){ err in
             if let err = err {
