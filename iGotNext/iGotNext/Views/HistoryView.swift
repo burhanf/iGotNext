@@ -12,6 +12,7 @@ struct HistoryView: View {
     private let db = Firestore.firestore()
     @State var games: [Dictionary<String, String>] = []
     
+    // Struct for each game history row
     struct HistoryRow: View {
         var game: Dictionary<String, String>
         var body: some View {
@@ -33,7 +34,7 @@ struct HistoryView: View {
         }
     }
 
-    
+    // body of struct
     var body: some View {
         List(games, id: \.self) { game in
             HistoryRow(game: game)
@@ -41,6 +42,8 @@ struct HistoryView: View {
             fetchData()
         }
     }
+    
+    //fetch data function to capture history documents
     
     func fetchData() {
         games.removeAll()

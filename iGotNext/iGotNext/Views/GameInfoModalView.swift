@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-
+// modal that is shown only when a button is pressed on the map page.
 struct GameInfoModalView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var game: Game
     var body: some View {
         
-        
+        // vstack to hold game information
         VStack{
             Button("Press to dismiss") {
                 presentationMode.wrappedValue.dismiss()
